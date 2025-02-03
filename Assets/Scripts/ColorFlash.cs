@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,39 +13,30 @@ public class ColorFlash : MonoBehaviour
     private void Update()
     {
         Color tempColor = dot.color;
+        //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a>0 && decrease  )
         {
-            //Debug.Log("Increasing" + dot.color.a);
+            //subtracts form the alpha in tempColor and sets it to the dot color
             tempColor.a = tempColor.a - (float)0.01;
             dot.color = tempColor;
         }
         else
         {
-            //Debug.Log("SWAP" + dot.color);
             decrease = false;
         }
+
+        //checks if the dot color is not the original color and that the aplha is not decreasing
         if (dot.color != ogColor && tempColor.a < 1 && !decrease)
         {
-            //Debug.Log("Decreasing" + dot.color.a);
+            //adds to the alpha in tempColor and sets it to the dot color
             tempColor.a = tempColor.a + (float)0.01;
             dot.color = tempColor;
         }
         else
         {
-            //Debug.Log("Decreasing"+ dot.color);
             decrease = true;
         }
 
     }
 
-    //this should be called somewhere in Update
-    void FadeOut()
-    {
-        dot.color = Color.Lerp(dot.color, newColor, fadeTime * Time.deltaTime);
-
-    }
-    void FadeIn()
-    {
-        dot.color = Color.Lerp(dot.color, ogColor, fadeTime * Time.deltaTime);
-    }
 }
