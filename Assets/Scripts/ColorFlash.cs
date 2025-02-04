@@ -1,7 +1,9 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
+[System.Serializable]
 public class ColorFlash : MonoBehaviour
 {
     public Image dot;
@@ -9,9 +11,16 @@ public class ColorFlash : MonoBehaviour
     public Color ogColor;
     public float fadeTime = 0.1f;
     public bool decrease = true;
+    public TextMeshProUGUI timerTxt;
+    private float timeCount;
 
     private void Update()
     {
+        timeCount += Time.deltaTime;
+        int mins = Mathf.FloorToInt(timeCount / 60);
+        int sec = Mathf.FloorToInt(timeCount % 60);
+        timerTxt.text = string.Format("{0:00}:{1:00}", mins, sec);
+
         Color tempColor = dot.color;
         //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a>0 && decrease  )

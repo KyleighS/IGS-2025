@@ -8,10 +8,12 @@ public class CameraModes : MonoBehaviour
     [SerializeField]
     public Volume volume;
     public GameObject camcorderOverlay;
+    public GameObject thermalCam;
 
     private void Start()
     {
         camcorderOverlay.SetActive(false);
+        thermalCam.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,6 +34,10 @@ public class CameraModes : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            thermalCam.SetActive(!thermalCam.activeSelf);
         }
     }
 }
