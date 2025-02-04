@@ -17,9 +17,10 @@ public class ColorFlash : MonoBehaviour
     private void Update()
     {
         timeCount += Time.deltaTime;
-        int mins = Mathf.FloorToInt(timeCount / 60);
+        int hours = Mathf.FloorToInt(timeCount / 3600) % 24;
+        int mins = Mathf.FloorToInt(timeCount / 60) % 60;
         int sec = Mathf.FloorToInt(timeCount % 60);
-        timerTxt.text = string.Format("{0:00}:{1:00}", mins, sec);
+        timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
 
         Color tempColor = dot.color;
         //checks if the dot color is not the new color and that the aplha is decreasing
