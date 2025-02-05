@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 [System.Serializable]
 public class ColorFlash : MonoBehaviour
@@ -19,20 +20,20 @@ public class ColorFlash : MonoBehaviour
     private float timeCount;
 
     [Header("Battery")]
-    public float batteryCharge;
-    public float drainRate = 10.0f;
+    public int batteryCharge;
+    public int fullBattery = 30;
+    public int drainRate = 1;
     public Slider batterySlider;
 
     void Start()
     {
-        batteryCharge = 100.0f;    // full charge
+        batteryCharge = fullBattery;
     }
 
     private void Update()
     {
         Timer();
-        BatteryDrain();
-
+        StartCoroutine(BatteryDrain());
 
         Color tempColor = dot.color;
         //checks if the dot color is not the new color and that the aplha is decreasing
@@ -58,7 +59,6 @@ public class ColorFlash : MonoBehaviour
         {
             decrease = true;
         }
-
     }
 
     public void Timer()
@@ -70,17 +70,23 @@ public class ColorFlash : MonoBehaviour
         timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
     }
 
-    public void BatteryDrain()
+    IEnumerator BatteryDrain()
     {
-        float usageThisFrame = drainRate * Time.deltaTime;
+        //int usageThisFrame = drainRate * (int)Time.deltaTime;
+        yield return new WaitForSeconds(5);
 
-        batteryCharge -= usageThisFrame;
+        batteryCharge -= drainRate;
+        batterySlider.value = batteryCharge;
 
         Debug.Log("Charge remaining: " + batteryCharge);
 
         if (batteryCharge <= 0)
         {
             camOverlay.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            batteryCharge = fullBattery;
         }
     }
 }
