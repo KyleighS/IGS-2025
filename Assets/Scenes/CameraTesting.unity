@@ -850,11 +850,12 @@ MonoBehaviour:
   dot: {fileID: 101729874}
   newColor: {r: 0.6901961, g: 0, b: 0, a: 0}
   ogColor: {r: 0.6901961, g: 0, b: 0, a: 1}
+  tempColor: {r: 0, g: 0, b: 0, a: 0}
   fadeTime: 2
   decrease: 1
   timerTxt: {fileID: 339467560}
   batteryCharge: 0
-  fullBattery: 30
+  fullBattery: 100
   drainRate: 1
   batterySlider: {fileID: 1006376939}
 --- !u!1 &305979378

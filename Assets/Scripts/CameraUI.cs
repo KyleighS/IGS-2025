@@ -5,13 +5,14 @@ using TMPro;
 using System.Collections;
 
 [System.Serializable]
-public class ColorFlash : MonoBehaviour
+public class CameraUI : MonoBehaviour
 {
     public GameObject camOverlay;
     [Header("Record dot")]
     public Image dot;
     public Color newColor;
     public Color ogColor;
+    public Color tempColor;
     public float fadeTime = 0.1f;
     public bool decrease = true;
 
@@ -27,15 +28,15 @@ public class ColorFlash : MonoBehaviour
 
     void Start()
     {
+        tempColor = dot.color;
         batteryCharge = fullBattery;
     }
 
     private void Update()
     {
         Timer();
-        StartCoroutine(BatteryDrain());
+        //StartCoroutine(BatteryDrain());
 
-        Color tempColor = dot.color;
         //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a > 0 && decrease)
         {
