@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class CameraModes : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CameraModes : MonoBehaviour
     public GameObject camcorderOverlay;
     public GameObject thermalCam;
     public bool nightVisionState;
+    public GameObject keyTxt;
 
     private void Start()
     {
@@ -29,6 +31,7 @@ public class CameraModes : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            keyTxt.SetActive(!keyTxt.activeSelf);
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
             SetNightVision(false);
             thermalCam.SetActive(false);
@@ -38,6 +41,12 @@ public class CameraModes : MonoBehaviour
         {
             SetNightVision(false, thermalCam.activeSelf);
             thermalCam.SetActive(!thermalCam.activeSelf);
+        }
+
+        //for testing only, will be moved once we have a menu for it
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 
