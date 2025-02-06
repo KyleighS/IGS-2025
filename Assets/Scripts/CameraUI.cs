@@ -36,7 +36,6 @@ public class CameraUI : MonoBehaviour
     private void Update()
     {
         Timer();
-        batterySlider.value = batteryCharge;
 
         //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a > 0 && decrease)
@@ -61,18 +60,19 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
-        if (batteryCharge <= 0)
-        {
-            camOverlay.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            batteryCharge = fullBattery;
-        }
+        //if (batteryCharge <= 0)
+        //{
+        //    camOverlay.SetActive(false);
+        //}
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    batteryCharge = fullBattery;
+        //}
     }
 
     public void Timer()
     {
+
         timeCount += Time.deltaTime;
         int hours = Mathf.FloorToInt(timeCount / 3600) % 24;
         int mins = Mathf.FloorToInt(timeCount / 60) % 60;
@@ -80,16 +80,17 @@ public class CameraUI : MonoBehaviour
         timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
 
 
-        if (sec % 5 == 0 && !activated)
-        {
-            batteryCharge -= drainRate;
-            activated = true;
-            Debug.Log("Charge remaining: " + batteryCharge);
-        }
-        else if (sec % 5 == 1)
-        {
-            activated = false;
-        }
+        //if (sec % 5 == 0 && !activated)
+        //{
+        //    batteryCharge -= drainRate;
+        //    activated = true;
+        //    Debug.Log("Charge remaining: " + batteryCharge);
+        //}
+        //else if(sec % 5 == 1)
+        //{
+        //    activated = false;
+        //}
+        //batterySlider.value = batteryCharge;
     }
    
 }
