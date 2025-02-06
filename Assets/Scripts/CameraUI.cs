@@ -25,6 +25,7 @@ public class CameraUI : MonoBehaviour
     public int fullBattery = 30;
     public int drainRate = 1;
     public Slider batterySlider;
+    private bool activated = true;
 
     void Start()
     {
@@ -60,27 +61,6 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
-    }
-
-    public void Timer()
-    {
-        timeCount += Time.deltaTime;
-        int hours = Mathf.FloorToInt(timeCount / 3600) % 24;
-        int mins = Mathf.FloorToInt(timeCount / 60) % 60;
-        int sec = Mathf.FloorToInt(timeCount % 60);
-        timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
-    }
-
-    IEnumerator BatteryDrain()
-    {
-        //int usageThisFrame = drainRate * (int)Time.deltaTime;
-        yield return new WaitForSeconds(5);
-
-        batteryCharge -= drainRate;
-        batterySlider.value = batteryCharge;
-
-        Debug.Log("Charge remaining: " + batteryCharge);
-
         if (batteryCharge <= 0)
         {
             camOverlay.SetActive(false);
@@ -90,6 +70,40 @@ public class CameraUI : MonoBehaviour
             batteryCharge = fullBattery;
         }
     }
+
+    public void Timer()
+    {
+        timeCount += Time.deltaTime;
+        int hours = Mathf.FloorToInt(timeCount / 3600) % 24;
+        int mins = Mathf.FloorToInt(timeCount / 60) % 60;
+        int sec = Mathf.FloorToInt(timeCount % 60);
+        timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
+        if (sec % 5 == 0 && !activated)
+        {
+            batteryCharge -= drainRate;
+            batterySlider.value = batteryCharge;
+            activated = true;
+            Debug.Log("Charge remaining: " + batteryCharge);
+        }
+        else if (sec % 5 == 1)
+        {
+            activated = false;
+        }
+    }
+
+    IEnumerator BatteryDrain()
+    {
+
+            //int usageThisFrame = drainRate * (int)Time.deltaTime;
+            yield return new WaitForSeconds(5);
+
+
+
+            
+
+           
+        }
+   
 }
 
 
