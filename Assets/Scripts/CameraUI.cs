@@ -60,14 +60,15 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
-        //if (batteryCharge <= 0)
-        //{
-        //    camOverlay.SetActive(false);
-        //}
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    batteryCharge = fullBattery;
-        //}
+        if (batteryCharge <= 0)
+        {
+            camOverlay.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            batteryCharge = fullBattery;
+            batterySlider.value = batteryCharge;
+        }
     }
 
     public void Timer()
@@ -80,19 +81,20 @@ public class CameraUI : MonoBehaviour
         timerTxt.text = string.Format("{0:00}:{1:00}:{2:00}", hours, mins, sec);
 
 
-        //if (sec % 5 == 0 && !activated)
-        //{
-        //    batteryCharge -= drainRate;
-        //    activated = true;
-        //    Debug.Log("Charge remaining: " + batteryCharge);
-        //}
-        //else if(sec % 5 == 1)
-        //{
-        //    activated = false;
-        //}
-        //batterySlider.value = batteryCharge;
+        if (sec % 5 == 0 && !activated)
+        {
+            batteryCharge -= drainRate;
+            batterySlider.value = batteryCharge;
+            Debug.Log("Slider was updated");
+            activated = true;
+            Debug.Log("Charge remaining: " + batteryCharge);
+        }
+        else if (sec % 5 == 1)
+        {
+            activated = false;
+        }
     }
-   
+
 }
 
 

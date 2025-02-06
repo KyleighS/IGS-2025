@@ -11,7 +11,6 @@ public class CameraModes : MonoBehaviour
     public GameObject camcorderOverlay;
     public GameObject thermalCam;
     public bool nightVisionState;
-    public GameObject keyTxt;
 
     private void Start()
     {
@@ -31,8 +30,11 @@ public class CameraModes : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            keyTxt.SetActive(!keyTxt.activeSelf);
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
+
+            bool volumeGrain = volume.profile.TryGet(out FilmGrain grain);
+            grain.active = !grain.active;
+
             SetNightVision(false);
             thermalCam.SetActive(false);
         }
@@ -55,12 +57,10 @@ public class CameraModes : MonoBehaviour
         thermalCam.SetActive((false||thermal));
 
         bool volumeColor = volume.profile.TryGet(out ColorAdjustments colorAdjustments);
-        bool volumeGrain = volume.profile.TryGet(out FilmGrain grain);
         bool volumeBloom = volume.profile.TryGet(out Bloom bloom);
         bool volumeVignette = volume.profile.TryGet(out Vignette vignette);
 
         colorAdjustments.active = active;
-        grain.active = active;
         bloom.active = active;
         vignette.active = active;
         nightVisionState= active;
