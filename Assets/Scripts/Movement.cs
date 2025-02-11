@@ -6,8 +6,10 @@ public class Movement : MonoBehaviour
     private float z;
 
     public CharacterController controller;
-    public float speed = 15f;
+    public float baseSpeed = 15f;
+    public float curSpeed;
     public float gravity = -9.8f;
+    public float sprintSpeed = 2f;
 
     public Vector3 velocity;
 
@@ -19,7 +21,16 @@ public class Movement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            curSpeed = baseSpeed * sprintSpeed;
+        }
+        else
+        {
+            curSpeed = baseSpeed;
+        }
+
+        controller.Move(move * curSpeed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
