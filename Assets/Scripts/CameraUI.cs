@@ -26,6 +26,7 @@ public class CameraUI : MonoBehaviour
     public int drainRate;
     public Slider batterySlider;
     private bool activated = true;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -66,9 +67,9 @@ public class CameraUI : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            batteryCharge = fullBattery;
-            batterySlider.value = batteryCharge;
+            ReloadBattery();
         }
+
     }
 
     public void Timer()
@@ -94,7 +95,38 @@ public class CameraUI : MonoBehaviour
             activated = false;
         }
     }
+    public void ReloadBattery()
+    {
+        for (int i = 0; i < gameManager.inventory.Count; i++)
+        {
+            if (gameManager.inventory[i] == "Battery")
+            {
+                batteryCharge = fullBattery;
+                batterySlider.value = batteryCharge;
+                gameManager.inventory.Remove(gameManager.inventory[i]);
+                Debug.Log("Player has battery");
+            }
+            else
+            {
+                Debug.Log("Player dosent have a battery");
+            }
+        }
 
+    }
+    public int GetBatteryCount()
+    {
+        int batteryCount = 0;
+
+        for (int i = 0; i < gameManager.inventory.Count; i++)
+        {
+            if (gameManager.inventory[i] == "Battery")
+            {
+                batteryCount++;
+            }
+        }
+
+        return batteryCount;
+    }
 }
 
 
