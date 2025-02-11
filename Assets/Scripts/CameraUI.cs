@@ -8,6 +8,11 @@ using System.Collections;
 public class CameraUI : MonoBehaviour
 {
     public GameObject camOverlay;
+    //public Camera camera;
+    //public float shake = 0f;
+    //public float shakeAmount = 0.7f;
+    //public float decreaseFactor = 1.0f;
+
     [Header("Record dot")]
     public Image dot;
     public Color newColor;
@@ -27,6 +32,7 @@ public class CameraUI : MonoBehaviour
     public Slider batterySlider;
     private bool activated = true;
     public GameManager gameManager;
+    public TextMeshProUGUI batCountTxt;
 
     void Start()
     {
@@ -37,6 +43,10 @@ public class CameraUI : MonoBehaviour
     private void Update()
     {
         Timer();
+        //batCountTxt.text = string(GetBatteryCount());
+
+        //camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+        //shake -= Time.deltaTime * decreaseFactor;
 
         //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a > 0 && decrease)
@@ -128,5 +138,7 @@ public class CameraUI : MonoBehaviour
         return batteryCount;
     }
 }
+
+
 
 
