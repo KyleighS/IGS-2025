@@ -23,7 +23,7 @@ public class CameraUI : MonoBehaviour
     [Header("Battery")]
     public int batteryCharge;
     public int fullBattery = 30;
-    public int drainRate = 1;
+    public int drainRate;
     public Slider batterySlider;
     private bool activated = true;
 
