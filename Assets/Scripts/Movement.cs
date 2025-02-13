@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
+        //sprint if holding left shift
         if (Input.GetKey(KeyCode.LeftShift))
         {
             curSpeed = baseSpeed * sprintSpeed;

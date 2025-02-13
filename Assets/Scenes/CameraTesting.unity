@@ -1136,10 +1136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camOverlay: {fileID: 261782961}
-  camera: {fileID: 802681908}
-  shake: 0
-  shakeAmount: 0.7
-  decreaseFactor: 1
   dot: {fileID: 101729874}
   newColor: {r: 0.6901961, g: 0, b: 0, a: 0}
   ogColor: {r: 0.6901961, g: 0, b: 0, a: 1}
@@ -5460,7 +5456,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704722617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5810,10 +5806,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1775697235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fbcbd43fb999e42ab56863e7b970f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 60535522117dfbd41a587d0c7f1d9734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
+  manager: {fileID: 607644954}
 --- !u!1 &1826606995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6853,7 +6849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 802681908}
-  interactionDistance: 4
+  mainUI: {fileID: 261782963}
+  interactionDistance: 5
   interactionUI: {fileID: 1006263126}
   interactionText: {fileID: 954011113}
 --- !u!1660057539 &9223372036854775807

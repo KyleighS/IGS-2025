@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     public Camera mainCam;
+    public CameraUI mainUI;
     public float interactionDistance = 2f;
 
     public GameObject interactionUI;
@@ -15,7 +16,10 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        InteractionRay();
+        if (!mainUI.camOverlay.activeSelf)
+        {
+            InteractionRay();
+        }
     }
 
     void InteractionRay()
