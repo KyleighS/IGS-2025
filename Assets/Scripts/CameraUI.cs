@@ -8,10 +8,10 @@ using System.Collections;
 public class CameraUI : MonoBehaviour
 {
     public GameObject camOverlay;
-    //public Camera camera;
-    //public float shake = 0f;
-    //public float shakeAmount = 0.7f;
-    //public float decreaseFactor = 1.0f;
+    public Camera camera;
+    public float shake = 0f;
+    public float shakeAmount = 0.1f;
+    public float decreaseFactor = 1.0f;
 
     [Header("Record dot")]
     public Image dot;
@@ -38,15 +38,16 @@ public class CameraUI : MonoBehaviour
     {
         tempColor = dot.color;
         batteryCharge = fullBattery;
+        
     }
 
     private void Update()
     {
         Timer();
-        //batCountTxt.text = string(GetBatteryCount());
+        batCountTxt.text = GetBatteryCount().ToString();
 
-        //camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
-        //shake -= Time.deltaTime * decreaseFactor;
+        camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+        shake -= Time.deltaTime * decreaseFactor;
 
         //checks if the dot color is not the new color and that the aplha is decreasing
         if (dot.color != newColor && tempColor.a > 0 && decrease)
