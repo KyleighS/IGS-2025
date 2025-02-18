@@ -24,3 +24,4 @@ public class ObjectPickup : MonoBehaviour, IInteractable
         }
     }
 }
+

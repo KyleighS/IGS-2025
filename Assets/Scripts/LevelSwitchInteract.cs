@@ -11,17 +11,6 @@ public class LevelSwitchInteract : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
-
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                if (hitInfo.collider.gameObject.tag == "Door")
-                {
-                    SceneManager.LoadScene(sceneName);
-                }
-            }
-        }
+        SceneManager.LoadScene(sceneName);
     }
 }

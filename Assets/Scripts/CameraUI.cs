@@ -34,7 +34,6 @@ public class CameraUI : MonoBehaviour
     {
         tempColor = dot.color;
         batteryCharge = fullBattery;
-        
     }
 
     private void Update()
