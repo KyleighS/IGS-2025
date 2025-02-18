@@ -8,9 +8,9 @@ public class CameraMove : MonoBehaviour
     public float sensitivity = 100f;
     public Transform player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //locks cursor to center of screen and hides it
         Cursor.lockState = CursorLockMode.Locked;
     }
 

@@ -23,11 +23,7 @@ public class CameraModes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (Input.GetKeyDown(KeyCode.E) && camcorderOverlay.activeSelf)
-        {
-            SetNightVision(!nightVisionState);
-        }
-
+        //pulls the camera up if right click is pressed
         if (Input.GetMouseButtonDown(1))
         {
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
@@ -39,6 +35,13 @@ public class CameraModes : MonoBehaviour
             thermalCam.SetActive(false);
         }
 
+        //activates nightvision if the camera is up and E is pressed
+        if (Input.GetKeyDown(KeyCode.E) && camcorderOverlay.activeSelf)
+        {
+            SetNightVision(!nightVisionState);
+        }
+
+        //activates thermal vision if the camera is up and F is pressed
         if (Input.GetKeyDown(KeyCode.F) && camcorderOverlay.activeSelf)
         {
             SetNightVision(false, thermalCam.activeSelf);
@@ -52,6 +55,7 @@ public class CameraModes : MonoBehaviour
         }
     }
 
+    //function to turn on everything for night vision mode
     public void SetNightVision(bool active = false, bool thermal = false)
     {
         thermalCam.SetActive((false||thermal));

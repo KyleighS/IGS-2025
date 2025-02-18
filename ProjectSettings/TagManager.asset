@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickable
   - Battery
+  - Door
   layers:
   - Default
   - TransparentFX
