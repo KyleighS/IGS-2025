@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class ScreenShot : MonoBehaviour
 
     private Texture2D screenCapture;
     private bool viewingPhoto;
-    //maybe make a list or dictonary to store the multiple photos in
+    public List<Sprite> pictures;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,7 @@ public class ScreenShot : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && camUI.activeSelf)
         {
             if(!viewingPhoto)
             {
@@ -53,7 +54,6 @@ public class ScreenShot : MonoBehaviour
 
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
 
-
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
         DisplayPhoto();
@@ -69,6 +69,7 @@ public class ScreenShot : MonoBehaviour
         //Debug.Log("Photo was turned into sprite");
 
         photoDisplayArea.sprite = photoSprite;
+        pictures.Add(photoSprite);
 
         photoFrame.SetActive(true);
         fadingAnimation.Play("PhotoFade");
@@ -85,6 +86,6 @@ public class ScreenShot : MonoBehaviour
     {
         viewingPhoto = false;
         photoFrame.SetActive(false);
-        camUI.SetActive(true);
+        //camUI.SetActive(true);
     }
 }
