@@ -1193,6 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camOverlay: {fileID: 261782961}
+  cameraModes: {fileID: 802681912}
   dot: {fileID: 101729874}
   newColor: {r: 0.6901961, g: 0, b: 0, a: 0}
   ogColor: {r: 0.6901961, g: 0, b: 0, a: 1}
@@ -2510,6 +2511,7 @@ MonoBehaviour:
   camFlash: {fileID: 902419678}
   flashTime: 0.5
   fadingAnimation: {fileID: 1926691363}
+  pictures: []
 --- !u!1 &613321298
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,6 +3263,7 @@ MonoBehaviour:
   camcorderOverlay: {fileID: 261782961}
   thermalCam: {fileID: 1453094365}
   nightVisionState: 0
+  camUI: {fileID: 261782963}
 --- !u!1 &831308856
 GameObject:
   m_ObjectHideFlags: 0
@@ -7595,7 +7598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2095673357}
-  baseSpeed: 15
+  baseSpeed: 10
   curSpeed: 0
   gravity: -9.8
   sprintSpeed: 2
@@ -7614,7 +7617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 802681908}
   mainUI: {fileID: 261782963}
-  interactionDistance: 5
+  interactionDistance: 6
   interactionUI: {fileID: 1006263126}
   interactionText: {fileID: 954011113}
 --- !u!1660057539 &9223372036854775807

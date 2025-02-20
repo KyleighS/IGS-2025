@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public Camera mainCam;
     public CameraUI mainUI;
-    public float interactionDistance = 2f;
+    public float interactionDistance;
 
     public GameObject interactionUI;
     public TextMeshProUGUI interactionText;

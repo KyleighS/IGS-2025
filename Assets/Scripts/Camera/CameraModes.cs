@@ -11,6 +11,7 @@ public class CameraModes : MonoBehaviour
     public GameObject camcorderOverlay;
     public GameObject thermalCam;
     public bool nightVisionState;
+    public CameraUI camUI;
 
     private void Start()
     {
@@ -18,13 +19,14 @@ public class CameraModes : MonoBehaviour
         thermalCam.SetActive(false);
         nightVisionState = false;
         SetNightVision(false);
+        camUI.batteryCharge = camUI.fullBattery;
     }
 
     // Update is called once per frame
     void Update()
     {  
         //pulls the camera up if right click is pressed
-        if (Input.GetMouseButtonDown(1))
+        if (camUI.batteryCharge != 0 && Input.GetMouseButtonDown(1))
         {
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
 
@@ -52,6 +54,12 @@ public class CameraModes : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        //Reloads battery when R is pressed even if the camera is down
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            camUI.ReloadBattery();
         }
     }
 

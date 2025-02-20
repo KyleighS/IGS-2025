@@ -3,11 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 public class CameraUI : MonoBehaviour
 {
     public GameObject camOverlay;
+    public CameraModes cameraModes;
 
     [Header("Record dot")]
     public Image dot;
@@ -23,7 +26,7 @@ public class CameraUI : MonoBehaviour
 
     [Header("Battery")]
     public int batteryCharge;
-    public int fullBattery = 30;
+    public int fullBattery = 100;
     public int drainRate;
     public Slider batterySlider;
     private bool activated = true;
@@ -33,7 +36,7 @@ public class CameraUI : MonoBehaviour
     void Start()
     {
         tempColor = dot.color;
-        batteryCharge = fullBattery;
+        //batteryCharge = fullBattery;
     }
 
     private void Update()
@@ -68,11 +71,13 @@ public class CameraUI : MonoBehaviour
         if (batteryCharge <= 0)
         {
             camOverlay.SetActive(false);
+            bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
+            grain.active = !grain.active;
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ReloadBattery();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    ReloadBattery();
+        //}
 
     }
 
