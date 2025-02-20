@@ -5,7 +5,7 @@ public class ObjectPickup : MonoBehaviour, IInteractable
     public GameManager manager;
     public string GetDescription()
     {
-        return "Left Click to Pick up";
+        return "E to Pick up";
     }
 
     public void Interact()

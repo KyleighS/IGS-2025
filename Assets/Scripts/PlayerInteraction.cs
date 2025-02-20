@@ -38,7 +38,7 @@ public class PlayerInteraction : MonoBehaviour
                 hitSomething = true;
                 interactionText.text = interactable.GetDescription();
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.E) && !mainUI.camOverlay.activeSelf)
                 {
                     interactable.Interact();
                 }
