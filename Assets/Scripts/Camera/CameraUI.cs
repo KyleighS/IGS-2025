@@ -95,9 +95,9 @@ public class CameraUI : MonoBehaviour
         {
             batteryCharge -= drainRate;
             batterySlider.value = batteryCharge;
-            Debug.Log("Slider was updated");
+            //Debug.Log("Slider was updated");
             activated = true;
-            Debug.Log("Charge remaining: " + batteryCharge);
+            //Debug.Log("Charge remaining: " + batteryCharge);
         }
         else if (sec % 5 == 1)
         {
@@ -113,11 +113,11 @@ public class CameraUI : MonoBehaviour
                 batteryCharge = fullBattery;
                 batterySlider.value = batteryCharge;
                 gameManager.inventory.Remove(gameManager.inventory[i]);
-                Debug.Log("Player has battery");
+                //Debug.Log("Player has battery");
             }
             else
             {
-                Debug.Log("Player dosent have a battery");
+                //Debug.Log("Player dosent have a battery");
             }
         }
 
