@@ -7,6 +7,7 @@ TagManager:
   - Pickable
   - Battery
   - Door
+  - Evidence
   layers:
   - Default
   - TransparentFX

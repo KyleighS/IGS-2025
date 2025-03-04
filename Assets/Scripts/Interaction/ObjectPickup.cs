@@ -3,6 +3,7 @@ using UnityEngine;
 public class ObjectPickup : MonoBehaviour, IInteractable
 {
     public GameManager manager;
+
     public string GetDescription()
     {
         return "E to Pick up";
