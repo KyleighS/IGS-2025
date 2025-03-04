@@ -5,6 +5,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class CameraUI : MonoBehaviour
@@ -108,7 +109,7 @@ public class CameraUI : MonoBehaviour
     {
         for (int i = 0; i < gameManager.inventory.Count; i++)
         {
-            if (gameManager.inventory[i] == "Battery")
+            if (gameManager.inventory[i].gameObject.tag == "Battery")
             {
                 batteryCharge = fullBattery;
                 batterySlider.value = batteryCharge;
@@ -121,18 +122,37 @@ public class CameraUI : MonoBehaviour
             }
         }
 
+        //foreach (KeyValuePair<string, bool> item in gameManager.inventory)
+        //{
+        //    if (item.Key == "Battery")
+        //    {
+        //        batteryCharge = fullBattery;
+        //        batterySlider.value = batteryCharge;
+        //        gameManager.inventory.Remove(item.Key);
+
+        //    }
+        //}
+
     }
     public int GetBatteryCount()
     {
         int batteryCount = 0;
 
-        for (int i = 0; i < gameManager.inventory.Count; i++)
-        {
-            if (gameManager.inventory[i] == "Battery")
-            {
-                batteryCount++;
-            }
-        }
+        //for (int i = 0; i < gameManager.inventory.Count; i++)
+        //{
+        //    if (gameManager.inventory[i] == "Battery")
+        //    {
+        //        batteryCount++;
+        //    }
+        //}
+
+        //foreach (KeyValuePair<string, bool> item in gameManager.inventory)
+        //{
+        //    if (item.Key == "Battery")
+        //    {
+        //        batteryCount++;
+        //    }
+        //}
 
         return batteryCount;
     }

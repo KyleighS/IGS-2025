@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     public Camera mainCam;
-    public CameraUI mainUI;
+    public CameraUI camUI;
     public float interactionDistance;
 
     public GameObject interactionUI;
@@ -16,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (!mainUI.camOverlay.activeSelf)
+        if (!camUI.camOverlay.activeSelf)
         {
             InteractionRay();
         }
@@ -38,8 +38,9 @@ public class PlayerInteraction : MonoBehaviour
                 hitSomething = true;
                 interactionText.text = interactable.GetDescription();
 
-                if (Input.GetKeyDown(KeyCode.E) && !mainUI.camOverlay.activeSelf)
+                if (Input.GetKeyDown(KeyCode.E) && !camUI.camOverlay.activeSelf)
                 {
+                    Debug.Log("Interaction was called");
                     interactable.Interact();
                 }
             }

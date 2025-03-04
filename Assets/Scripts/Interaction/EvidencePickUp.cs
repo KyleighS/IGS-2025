@@ -1,0 +1,50 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EvidencePickUp : MonoBehaviour, IInteractable
+{
+    public GameManager manager;
+    public GameObject winOverlay;
+    public int allEvidence = 5;
+    public Slider evidenceSlider;
+
+    public void Start()
+    {
+        evidenceSlider.maxValue = allEvidence;
+        evidenceSlider.value = 0;
+    }
+
+    public string GetDescription()
+    {
+        return "To Pick up";
+    }
+
+    public void Interact()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            if (hitInfo.collider.gameObject.tag == "Evidence")
+            {
+                manager.inventory.Add(hitInfo.collider.gameObject);
+                Debug.Log("object was added");
+
+                hitInfo.collider.gameObject.SetActive(false);
+                //Destroy(hitInfo.collider.gameObject);
+
+                if (hitInfo.collider.gameObject.tag == "Evidence")
+                {
+                    if (evidenceSlider.value >= allEvidence)
+                    {
+                        winOverlay.SetActive(true);
+                    }
+
+                    evidenceSlider.value++;
+                }
+
+            }
+        }
+    }
+}
