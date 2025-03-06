@@ -14280,7 +14280,7 @@ MonoBehaviour:
   mainCam: {fileID: 802681908}
   camUI: {fileID: 261782963}
   interactionDistance: 6
-  interactionUI: {fileID: 1006263126}
+  interactionUI: {fileID: 1239097385}
   interactionText: {fileID: 954011113}
 --- !u!114 &2095673360
 MonoBehaviour:
