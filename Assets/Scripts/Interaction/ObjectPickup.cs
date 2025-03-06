@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ObjectPickup : MonoBehaviour, IInteractable
 {
     public GameManager manager;
+
     public string GetDescription()
     {
-        return "E to Pick up";
+        return "To Pick up";
     }
 
     public void Interact()
@@ -15,11 +18,14 @@ public class ObjectPickup : MonoBehaviour, IInteractable
 
         if (Physics.Raycast(ray, out hitInfo))
         {
-            if (hitInfo.collider.gameObject.tag == "Pickable")
+            if (hitInfo.collider.gameObject.tag == "Battery")
             {
-                manager.inventory.Add(hitInfo.collider.gameObject.name);
+                manager.inventory.Add(hitInfo.collider.gameObject);
+                Debug.Log("object was added");
 
-                Destroy(hitInfo.collider.gameObject);
+                hitInfo.collider.gameObject.SetActive(false);
+                //Destroy(hitInfo.collider.gameObject);
+
             }
         }
     }

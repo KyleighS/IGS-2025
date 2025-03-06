@@ -37,18 +37,21 @@ public class ScreenShot : MonoBehaviour
 
     private void Update()
     {
+        //checking if the camera ui is active and the player hits the right button
         if(Input.GetMouseButtonDown(0) && camUI.activeSelf)
         {
+            //makes sure a previous photo isnt still up
             if(!viewingPhoto)
             {
+                //calls the TakePhoto function
                 StartCoroutine(TakePicture());
             }
         }
+        //pulls up the photo album if Tab is hit also disables the camera UI
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            photoAlbum.SetActive(true);
+            photoAlbum.SetActive(!photoAlbum.activeSelf);
             camUI.SetActive(false);
-
         }
     }
 
@@ -57,7 +60,6 @@ public class ScreenShot : MonoBehaviour
         camUI.SetActive(false);
         photoAlbum.SetActive(false);
         StartCoroutine(FlashEffect());
-        Debug.Log("Photo was takken");
         viewingPhoto = true;
 
         yield return new WaitForEndOfFrame();
@@ -69,18 +71,13 @@ public class ScreenShot : MonoBehaviour
         newCapture.Apply();
         screenCapture = newCapture;
         DisplayPhoto();
-
     }
 
     public void DisplayPhoto()
     {
-        //Debug.Log("Photo is displayed");
-        
         Sprite photoSprite = Sprite.Create(screenCapture, 
             new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), 
             new Vector2(0.5f, 0.5f), 100.0f);
-
-        //Debug.Log("Photo was turned into sprite");
 
         photoDisplayArea.sprite = photoSprite;
         gameManager.pictures.Add(photoSprite);
@@ -93,36 +90,41 @@ public class ScreenShot : MonoBehaviour
 
         for (int i = 0; i < gameManager.picSlots.Count; i++)
         {
-            //    int col = i % 4;
-            //    int row = (int)(i / 4);
-
             Sprite screenshot_sprite = gameManager.pictures[i];
             gameManager.picSlots[i].transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = screenshot_sprite;
         }
     }
-    IEnumerator FlashEffect()
-    {
-        camFlash.SetActive(true);
-        yield return new WaitForSeconds(flashTime);
-        camFlash.SetActive(false);
-        StartCoroutine(RemovePhoto());
-    }
+
     IEnumerator FadePictureOUt()
     {
-        //Debug.Log("Photo is shrinking");
+        //waits for 2 second before starting the animation to move the piture off the screen 
         yield return new WaitForSeconds(2);
         MovingPhoto.Play("MoveandShrink");
     }
 
     IEnumerator RemovePhoto()
     {
-       //Debug.Log("Photo is removed");
+        //waits for the previous animation to finish then deactiviates the photo UI
         yield return new WaitForSeconds(6);
         viewingPhoto = false;
         photoFrame.SetActive(false);
 
+        //sets the photo UI back to its original position and scale
         photoFrame.transform.localPosition = ogPos;
         photoFrame.transform.localScale = ogScale;
-        //Debug.Log("Photo is reset");
+    }
+
+    IEnumerator FlashEffect()
+    {
+        camFlash.SetActive(true);
+        yield return new WaitForSeconds(flashTime);
+        camFlash.SetActive(false);
+
+        StartCoroutine(RemovePhoto());
+    }
+
+    public void PullUpPhoto()
+    {
+
     }
 }
