@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/CameraTesting.unity
     guid: 9c4fe278e76f0234984d77b0d0c1abba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TownBlockOut.unity
     guid: 72361129f25699b47b66f06ddc2adea2
   - enabled: 1
