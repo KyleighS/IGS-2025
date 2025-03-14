@@ -4413,9 +4413,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 607644954}
   photoAlbum: {fileID: 339786539}
+  evidenceInView: {fileID: 2095673360}
   photoDisplayArea: {fileID: 1926691359}
   photoFrame: {fileID: 1127387329}
   camUI: {fileID: 261782961}
+  interactUI: {fileID: 1006263126}
   ogPos: {x: 0, y: 0}
   ogScale: {x: 0, y: 0, z: 0}
   camFlash: {fileID: 902419678}
@@ -10890,6 +10892,8 @@ MonoBehaviour:
     m_Bits: 0
   visibleEvidence: []
   meshResolution: 0
+  evidenceOnScreen: 0
+  mainCam: {fileID: 0}
 --- !u!136 &1529292602
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14304,6 +14308,8 @@ MonoBehaviour:
     m_Bits: 256
   visibleEvidence: []
   meshResolution: 0.25
+  evidenceOnScreen: 0
+  mainCam: {fileID: 802681908}
 --- !u!1 &2102349924
 GameObject:
   m_ObjectHideFlags: 0

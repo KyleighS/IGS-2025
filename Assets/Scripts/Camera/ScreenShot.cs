@@ -8,11 +8,13 @@ public class ScreenShot : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject photoAlbum;
+    public EvidenceInView evidenceInView;
 
     [Header("Photo")]
     public Image photoDisplayArea;
     public GameObject photoFrame;
     public GameObject camUI;
+    public GameObject interactUI;
     public Vector2 ogPos;
     public Vector3 ogScale;
 
@@ -45,6 +47,10 @@ public class ScreenShot : MonoBehaviour
             {
                 //calls the TakePhoto function
                 StartCoroutine(TakePicture());
+                if (evidenceInView.evidenceOnScreen)
+                {
+                    gameManager.evidenceSlider.value++;
+                }
             }
         }
         //pulls up the photo album if Tab is hit also disables the camera UI
@@ -59,6 +65,7 @@ public class ScreenShot : MonoBehaviour
     {
         camUI.SetActive(false);
         photoAlbum.SetActive(false);
+        interactUI.SetActive(false);    
         StartCoroutine(FlashEffect());
         viewingPhoto = true;
 
@@ -70,6 +77,7 @@ public class ScreenShot : MonoBehaviour
         newCapture.ReadPixels(regionToRead, 0, 0, false);
         newCapture.Apply();
         screenCapture = newCapture;
+
         DisplayPhoto();
     }
 
@@ -100,6 +108,7 @@ public class ScreenShot : MonoBehaviour
         //waits for 2 second before starting the animation to move the piture off the screen 
         yield return new WaitForSeconds(2);
         MovingPhoto.Play("MoveandShrink");
+        StartCoroutine(RemovePhoto());
     }
 
     IEnumerator RemovePhoto()
@@ -119,8 +128,6 @@ public class ScreenShot : MonoBehaviour
         camFlash.SetActive(true);
         yield return new WaitForSeconds(flashTime);
         camFlash.SetActive(false);
-
-        StartCoroutine(RemovePhoto());
     }
 
     public void PullUpPhoto()
