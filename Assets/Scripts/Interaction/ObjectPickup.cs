@@ -7,7 +7,9 @@ public class ObjectPickup : MonoBehaviour, IInteractable
 
     public string GetDescription()
     {
+        //Debug.Log("Object pick up");
         return "To Pick up";
+
     }
 
     public void Interact()

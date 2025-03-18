@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4454ab2de2e084bad35a75011432b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!65 &223325431
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1301,6 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60535522117dfbd41a587d0c7f1d9734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!136 &247666040
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5097,11 +5099,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e662d2192d6e247817533cc22705dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1184644709}
   photoAlbum: {fileID: 0}
+  evidenceInView: {fileID: 0}
   photoDisplayArea: {fileID: 156520132}
   photoFrame: {fileID: 1106677669}
   camUI: {fileID: 661371939}
+  interactUI: {fileID: 1913581419}
   ogPos: {x: 0, y: 0}
   ogScale: {x: 0, y: 0, z: 0}
   camFlash: {fileID: 1007416740}
@@ -8669,6 +8673,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b949bed4326f8ea44a3c36e122c16dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 1175178479}
+  camUI: {fileID: 661371941}
+  interactionDistance: 0
+  interactionUI: {fileID: 1913581419}
+  interactionText: {fileID: 1786768151}
 --- !u!114 &1978249611
 MonoBehaviour:
   m_ObjectHideFlags: 0
