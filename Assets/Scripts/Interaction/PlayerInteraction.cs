@@ -28,6 +28,7 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
 
         bool hitSomething = false;
+        interactionUI.SetActive(false);
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
@@ -36,7 +37,9 @@ public class PlayerInteraction : MonoBehaviour
             if (interactable != null)
             {
                 hitSomething = true;
+                //Debug.Log("Description was called");
                 interactionText.text = interactable.GetDescription();
+                interactionUI.SetActive(hitSomething);
 
                 if (Input.GetKeyDown(KeyCode.E) && !camUI.camOverlay.activeSelf)
                 {
@@ -45,7 +48,6 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
-        interactionUI.SetActive(hitSomething);
+        //interactionUI.SetActive(hitSomething);
     }
 }

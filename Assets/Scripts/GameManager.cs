@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     {
         evidenceSlider.maxValue = allEvidence;
         evidenceSlider.value = 0;
+        //set all dialogue evidence active here
     }
 
     public void Update()
