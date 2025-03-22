@@ -48,10 +48,10 @@ public class RoamingState : StateClass
             ChangeState(creatureScript.idleState, ref creatureScript.currentState);
         }
 
-        //if (creatureScript.CheckIfPlayerVisible())
-        //{
-        //    ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
-        //}
+        if (creatureScript.CheckIfPlayerVisible())
+        {
+            ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+        }
     }
 
     public override void OnEveryPhysicsFrame()

@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DialogueTrigger : MonoBehaviour, IInteractable
 {
     public Dialogue dialogue;
+    public bool spawnEvidence;
+
+    public void Start()
+    {
+        spawnEvidence = false;
+    }
 
     public string GetDescription()
     {
@@ -12,5 +19,6 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public void Interact()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        spawnEvidence = true;
     }
 }

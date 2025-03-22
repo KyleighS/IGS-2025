@@ -43,7 +43,7 @@ public class CreatureScript : MonoBehaviour
 
         idleState = new IdleState(this);
         roamingState = new RoamingState(this);
-        //chaseState = new FSM_ChaseState(this);
+        chaseState = new ChaseState(this);
         //investigateState = new FSM_InvestigateState(this);
         //takeCoverState = new FSM_TakingCover(this);
 
@@ -100,25 +100,30 @@ public class CreatureScript : MonoBehaviour
     /// <returns>Whether the player is in range, in the FOV, and not blocked by a wall</returns>
     public bool CheckIfPlayerVisible()
     {
+        //Debug.Log("checking if player is visable");
         Collider player;
-
+        //Debug.Log(awarenessSphere.IsTagInRange(playerTag, out player));
         if (!awarenessSphere.IsTagInRange(playerTag, out player))
         {
+            Debug.Log("Player isnt visable (TagRange)");
             return false;
         }
 
-        if (!IsObjectInRange(player.transform))
-        {
-            return false;
-        }
+        //if (!IsObjectInRange(player.transform))
+        //{
+        //    Debug.Log("Player isnt visable (ObjRange)");
+
+        //    return false;
+        //}
 
         if (!IsObjectVisible(player.transform))
         {
+            Debug.Log("Player isnt visable (ObjVis)");
             return false;
         }
 
         target = player.gameObject;
-        //Debug.Log("Player detected!");
+        Debug.Log("Player detected!");
 
         return true;
     }
