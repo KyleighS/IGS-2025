@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.Rendering.Universal;
 
 public class EvidenceInView : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class EvidenceInView : MonoBehaviour
     public List<Transform> visibleEvidence = new List<Transform>();
 
     public float meshResolution;
+    public bool evidenceOnScreen;
+    public Camera mainCam;
+
     private void Start()
     {
         StartCoroutine("FindEvidenceWithDelay", 1f);
@@ -44,14 +48,18 @@ public class EvidenceInView : MonoBehaviour
         {
             Transform evidence = evidenceInViewRadius[i].transform;
             Vector3 dirToEvidence = (evidence.position - transform.position).normalized;
-
-            if(Vector3.Angle(transform.position, dirToEvidence) < viewAngle / 2)
+       
+            if(Vector3.Angle(mainCam.transform.forward, dirToEvidence) < viewAngle / 2f)
             {
                 float distToEvidence = Vector3.Distance(transform.position, evidence.position);
+                Debug.DrawLine(transform.position, evidence.position, Color.red, 0.5f);
 
-                if(!Physics.Raycast(transform.position, dirToEvidence, distToEvidence, obstacleMask))
+
+                if (!Physics.Raycast(transform.position, dirToEvidence, distToEvidence, obstacleMask))
                 {
                     visibleEvidence.Add(evidence);
+                    //Debug.Log("Current layer: " + evidenceInViewRadius.layer);
+                    evidenceOnScreen = true;
                 }
             }
         }
@@ -61,12 +69,32 @@ public class EvidenceInView : MonoBehaviour
     {
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;
+        List<Vector3> viewPoints = new List<Vector3>();
 
-        for(int i = 0; i <= stepCount; i++)     
-        { 
+        for (int i = 0; i <= stepCount; i++)
+        {
             float angle = transform.eulerAngles.y - viewAngle / 2 + stepAngleSize * i;
-            ViewCastInfo viewCastInfo = ViewCast(angle);
+            ViewCastInfo newViewCast = ViewCast(angle);
+            viewPoints.Add(newViewCast.point);
         }
+
+        int vertexCount = viewPoints.Count + 1;
+        Vector3[] verticies = new Vector3[vertexCount];
+        int[] triagnles = new int[(vertexCount - 2) * 3];
+
+        verticies[0] = Vector3.zero;
+
+        for (int i = 0; i < vertexCount - 1; i++)
+        {
+            if (i < vertexCount - 2)
+            {
+                verticies[i + 1] = viewPoints[i];
+                triagnles[i * 3] = 0;
+                triagnles[i * 3 * 1] = i + 1;
+                //triagnles[i * 3 * 2] = i + 2;
+            }
+        }
+
     }
 
     ViewCastInfo ViewCast(float globalAngle)
@@ -81,7 +109,6 @@ public class EvidenceInView : MonoBehaviour
         else
         {
             return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, globalAngle);
-
         }
     }
 
@@ -92,7 +119,6 @@ public class EvidenceInView : MonoBehaviour
             angleInDegrees += transform.eulerAngles.y;
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-
     }
 
     public struct ViewCastInfo
@@ -109,6 +135,5 @@ public class EvidenceInView : MonoBehaviour
             dist = _dist;
             angle = _angle;
         }
-
     }
 }
