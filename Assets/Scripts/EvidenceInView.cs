@@ -26,7 +26,7 @@ public class EvidenceInView : MonoBehaviour
     }
     private void Update()
     {
-        DrawFOV();
+        //DrawFOV();
     }
 
     IEnumerator FindEvidenceWithDelay(float delay)

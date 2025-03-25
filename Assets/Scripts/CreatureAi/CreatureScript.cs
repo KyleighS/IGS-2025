@@ -23,7 +23,7 @@ public class CreatureScript : MonoBehaviour
 
     [Header("Hearing")]
     //The script handling the hearing of this enemy
-    //public EnemyHearing hearingScript;
+    public CreatureHearing hearingScript;
 
     [Header("States")]
     //The current state of this enemy
@@ -32,8 +32,11 @@ public class CreatureScript : MonoBehaviour
     public StateClass idleState;
     public StateClass roamingState;
     public StateClass chaseState;
-    public StateClass investigateState;
-    public StateClass takeCoverState;
+    public StateClass searchState;
+    public StateClass hideState;
+    public StateClass stalkState;
+    public StateClass attackState;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -44,7 +47,7 @@ public class CreatureScript : MonoBehaviour
         idleState = new IdleState(this);
         roamingState = new RoamingState(this);
         chaseState = new ChaseState(this);
-        //investigateState = new FSM_InvestigateState(this);
+        searchState = new SearchingState(this);
         //takeCoverState = new FSM_TakingCover(this);
 
         //Entry state gets assigned
@@ -66,7 +69,7 @@ public class CreatureScript : MonoBehaviour
     private void OnDisable()
     {
         awarenessSphere.OnColliderEntersAwareness -= TargetIfPlayer;
-        //hearingScript.OnSoundHeard -= InvestigateSound;
+        hearingScript.OnSoundHeard -= InvestigateSound;
     }
 
     // Update is called once per frame
@@ -166,14 +169,14 @@ public class CreatureScript : MonoBehaviour
     /// When called, will change the enemy to the investigate state and have them check the position of the sound played
     /// </summary>
     /// <param name="sound">The sound played that will be investigated</param>
-    //public void InvestigateSound(SoundClass sound)
-    //{
-    //    if (currentState is FSM_ChaseState)
-    //        return;
+    public void InvestigateSound(SoundClass sound)
+    {
+        if (currentState is ChaseState)
+            return;
 
-    //    ((FSM_InvestigateState)investigateState).SetTargetPos(sound.position);
-    //    currentState.ChangeState(investigateState, ref currentState);
-    //}
+        ((SearchingState)searchState).SetTargetPos(sound.position);
+        currentState.ChangeState(searchState, ref currentState);
+    }
 
     //public void TakeCover(SoundClass sound)
     //{
