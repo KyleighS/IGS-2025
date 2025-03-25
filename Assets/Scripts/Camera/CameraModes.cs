@@ -44,11 +44,11 @@ public class CameraModes : MonoBehaviour
         }
 
         //activates thermal vision if the camera is up and F is pressed
-        //if (Input.GetKeyDown(KeyCode.F) && camcorderOverlay.activeSelf)
-        //{
-        //    SetNightVision(false, thermalCam.activeSelf);
-        //    thermalCam.SetActive(!thermalCam.activeSelf);
-        //}
+        if (Input.GetKeyDown(KeyCode.F) && camcorderOverlay.activeSelf)
+        {
+            SetNightVision(false, thermalCam.activeSelf);
+            thermalCam.SetActive(!thermalCam.activeSelf);
+        }
 
         ////for testing only, will be moved once we have a menu for it
         //if (Input.GetKeyDown(KeyCode.Escape))
