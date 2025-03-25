@@ -8204,6 +8204,7 @@ GameObject:
   - component: {fileID: 1011874138}
   - component: {fileID: 1011874137}
   - component: {fileID: 1011874136}
+  - component: {fileID: 1011874141}
   m_Layer: 0
   m_Name: NPC_Joesph
   m_TagString: Untagged
@@ -8227,6 +8228,8 @@ MonoBehaviour:
     name: Joesph
     sentences:
     - 'Wow You actual went and found it. '
+    - 'Theres a chance more things are around that are. If your will to take another
+      look. '
   spawnEvidence: 0
 --- !u!136 &1011874137
 CapsuleCollider:
@@ -8320,6 +8323,20 @@ Transform:
   - {fileID: 597794612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011874141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011874135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76a6424d7562af4f9ba02bee1224dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: {fileID: 11400000, guid: 4d800c2e64a471942a9873bb5fb05b88, type: 2}
+  dialogueTrigger: {fileID: 1011874136}
 --- !u!1001 &1029219843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10627,7 +10644,8 @@ MonoBehaviour:
     - 'Hi Im Sarah, I run this store. '
     - 'Your pretty brave for staying in that cabin alone. People have reported trees
       randomly getting cut down at night. '
-    - 'Stay safe out there and buh bye now. '
+    - Id say theres probally more out there.
+    - 'Well stay safe out there and buh bye now. '
   spawnEvidence: 0
 --- !u!136 &1246169216
 CapsuleCollider:

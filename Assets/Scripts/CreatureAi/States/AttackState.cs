@@ -18,7 +18,7 @@ public class AttackState : StateClass
     public override void OnEnterState()
     {
         creatureScript.gameManager.evidenceSlider.value = 0;
-        SceneManager.LoadScene(creatureScript.gameManager.nextScene);
+        creatureScript.loseSceen.SetActive(true);
     }
 
     public override void OnEveryFrame()

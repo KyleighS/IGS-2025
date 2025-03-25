@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     {
         evidenceSlider.maxValue = allEvidence;
         evidenceSlider.value = 0;
+        winOverlay.SetActive(false);
     }
 
     public void Update()

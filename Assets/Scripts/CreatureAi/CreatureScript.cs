@@ -6,6 +6,7 @@ public class CreatureScript : MonoBehaviour
 {
     public GameManager gameManager;
     public string sceneName;
+    public GameObject loseSceen;
     //The script in charge of controlling the navigation of this AI agent
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
     public bool creatureInView = false;
@@ -54,6 +55,7 @@ public class CreatureScript : MonoBehaviour
         //Get the navmeshagent in this game object
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         sceneName = SceneManager.GetActiveScene().name;
+        loseSceen.SetActive(false);
 
         idleState = new IdleState(this);
         roamingState = new RoamingState(this);

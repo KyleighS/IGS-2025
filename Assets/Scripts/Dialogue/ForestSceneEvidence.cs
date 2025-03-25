@@ -7,15 +7,15 @@ public class ForestSceneEvidence : MonoBehaviour
 
     public void Start()
     {
-        if(test.evidenceActive)
+        if(test.evidenceActive == true)
         {
             Debug.Log("Evidence is active");
-            test.evidenceActive = true;
+            testEvidence.SetActive(true);
         }
         else
         {
-            Debug.Log("Evidence is active");
-            test.evidenceActive = false;
+            Debug.Log("Evidence is deactive");
+            testEvidence.SetActive(false);
         }
     }
 }

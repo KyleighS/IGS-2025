@@ -10456,7 +10456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1246169215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17419,28 +17419,13 @@ GameObject:
   - component: {fileID: 1859339339}
   - component: {fileID: 1859339338}
   - component: {fileID: 1859339337}
-  - component: {fileID: 1859339336}
   m_Layer: 0
   m_Name: NPC_Greg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1859339336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859339335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76a6424d7562af4f9ba02bee1224dcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  test: {fileID: 11400000, guid: d8529789c9852d7498176b75c1520e45, type: 2}
-  dialogueTrigger: {fileID: 1859339337}
+  m_IsActive: 1
 --- !u!114 &1859339337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17456,11 +17441,10 @@ MonoBehaviour:
   dialogue:
     name: Greg
     sentences:
-    - Hello, you must be new around here.
-    - My names Joesph
-    - Have you heard the rumors about the forest. Apparently theres some creature
-      out there.
-    - 'i saw some weird object around, maybe you can check it out.  '
+    - 'So you''ve been looking around that forest. '
+    - Have you seen it yet?
+    - 'The monster that lives out there. Id be careful its not too found of visitors. '
+    - 'But hey maybe you will be the one able to finally get it on film. '
   spawnEvidence: 0
 --- !u!136 &1859339338
 CapsuleCollider:

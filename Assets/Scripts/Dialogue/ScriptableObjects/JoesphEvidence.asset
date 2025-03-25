@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1f16443185d4c4da35eef4a481c65b, type: 3}
   m_Name: JoesphEvidence
   m_EditorClassIdentifier: 
-  evidenceActive: 0
+  evidenceActive: 1

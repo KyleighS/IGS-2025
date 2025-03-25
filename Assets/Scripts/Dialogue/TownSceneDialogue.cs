@@ -5,6 +5,11 @@ public class TownSceneDialogue : MonoBehaviour
     public TestDialogueEvidence test;
     public DialogueTrigger dialogueTrigger;
 
+    public void Start()
+    {
+        test.evidenceActive = false;
+    }
+
     public void Update()
     {
         if (dialogueTrigger.spawnEvidence)
@@ -12,9 +17,5 @@ public class TownSceneDialogue : MonoBehaviour
             test.evidenceActive = true;
             Debug.Log("Evidence bool has been set to true");
         }
-    }
-    public void Start()
-    {
-        test.evidenceActive = false;
     }
 }
