@@ -5,7 +5,7 @@ public class TownSceneDialogue : MonoBehaviour
     public TestDialogueEvidence test;
     public DialogueTrigger dialogueTrigger;
 
-    public void Start()
+    private void Start()
     {
         test.evidenceActive = false;
     }

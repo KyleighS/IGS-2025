@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   sceneName: 
+  loseSceen: {fileID: 0}
   navMeshAgent: {fileID: 6782004313499303847}
   creatureInView: 0
   awarenessSphere: {fileID: 5345037197994336344}

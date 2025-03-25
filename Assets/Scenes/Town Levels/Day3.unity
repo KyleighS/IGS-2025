@@ -8108,7 +8108,6 @@ GameObject:
   - component: {fileID: 1011874138}
   - component: {fileID: 1011874137}
   - component: {fileID: 1011874136}
-  - component: {fileID: 1011874141}
   m_Layer: 0
   m_Name: NPC_Joesph
   m_TagString: Untagged
@@ -8131,12 +8130,8 @@ MonoBehaviour:
   dialogue:
     name: Joesph
     sentences:
-    - Hello, you must be new around here.
-    - My names Joesph.
-    - Have you heard the rumors about the forest. Apparently theres some creature
-      out there.
-    - 'I saw some weird object around the dried up river. Maybe you can check it
-      out.  '
+    - 'This is a lot more then I thought. '
+    - Thanks kid
   spawnEvidence: 0
 --- !u!136 &1011874137
 CapsuleCollider:
@@ -8230,20 +8225,6 @@ Transform:
   - {fileID: 597794612}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1011874141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1011874135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76a6424d7562af4f9ba02bee1224dcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  test: {fileID: 11400000, guid: 7b02ed87f4b9bd147bbab9452b62cb77, type: 2}
-  dialogueTrigger: {fileID: 1011874136}
 --- !u!1001 &1029219843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9305,7 +9286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7509753046600806760, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7509753046600806760, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: picSlots.Array.size
@@ -10450,6 +10431,7 @@ GameObject:
   - component: {fileID: 1246169217}
   - component: {fileID: 1246169216}
   - component: {fileID: 1246169215}
+  - component: {fileID: 1246169220}
   m_Layer: 0
   m_Name: NPC_Sarah
   m_TagString: Untagged
@@ -10472,10 +10454,8 @@ MonoBehaviour:
   dialogue:
     name: Sarah
     sentences:
-    - 'Hi Im Sarah, I run this store. '
-    - 'Your pretty brave for staying in that cabin alone. People have reported trees
-      randomly getting cut down at night. '
-    - 'Stay safe out there and buh bye now. '
+    - So did you see any of those trees. Pretty crazy right.
+    - 'People have also said there are things somewhere behind the house. '
   spawnEvidence: 0
 --- !u!136 &1246169216
 CapsuleCollider:
@@ -10569,6 +10549,20 @@ Transform:
   - {fileID: 677988791}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -55.873, z: 0}
+--- !u!114 &1246169220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246169213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76a6424d7562af4f9ba02bee1224dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: {fileID: 11400000, guid: 5b6f4ec4df55da3479a672e759e2c52c, type: 2}
+  dialogueTrigger: {fileID: 1246169215}
 --- !u!1001 &1249272098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16611,7 +16605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4454ab2de2e084bad35a75011432b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Night1
+  sceneName: Night3
 --- !u!65 &1730212400
 BoxCollider:
   m_ObjectHideFlags: 0

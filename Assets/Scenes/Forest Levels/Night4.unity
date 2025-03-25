@@ -16578,6 +16578,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6a21d322e0af9e41bb51a86bed225c8, type: 3}
   m_PrefabInstance: {fileID: 407618663}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &409290433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 942648491046430264, guid: 937d41d9417b55f43ad742bfe810fbe0, type: 3}
+  m_PrefabInstance: {fileID: 2050561982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &419692630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17986,16 +17991,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1497389174}
     - target: {fileID: 4317534904133971093, guid: 5f2a8494819550f4ba6d812dada037c0, type: 3}
+      propertyPath: loseSceen
+      value: 
+      objectReference: {fileID: 409290433}
+    - target: {fileID: 4317534904133971093, guid: 5f2a8494819550f4ba6d812dada037c0, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 761223903}
     - target: {fileID: 4386088063174417262, guid: 5f2a8494819550f4ba6d812dada037c0, type: 3}
       propertyPath: m_Name
       value: CreatureStandin
-      objectReference: {fileID: 0}
-    - target: {fileID: 4386088063174417262, guid: 5f2a8494819550f4ba6d812dada037c0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7595075730985232425, guid: 5f2a8494819550f4ba6d812dada037c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18203,14 +18208,14 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -18266,13 +18271,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453071004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.117716685, y: -0.25688982, z: -0.03154209, w: 0.958726}
   m_LocalPosition: {x: 840.8549, y: 37.77877, z: 123.01508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -14, y: -30, z: 0}
 --- !u!1001 &453121093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25914,7 +25919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &649839327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30628,6 +30633,10 @@ PrefabInstance:
       propertyPath: MovingPhoto
       value: 
       objectReference: {fileID: 1757030089}
+    - target: {fileID: 8963265529720765474, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+      propertyPath: creatureScript
+      value: 
+      objectReference: {fileID: 523773282}
     - target: {fileID: 8963265529720765474, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: evidenceInView
       value: 
@@ -58767,7 +58776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4454ab2de2e084bad35a75011432b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Day2
+  sceneName: Day5
 --- !u!65 &1475530094
 BoxCollider:
   m_ObjectHideFlags: 0

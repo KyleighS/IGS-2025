@@ -79,14 +79,14 @@ public class CreatureScript : MonoBehaviour
             awarenessSphere = GetComponentInChildren<CreatureAwareness>();
 
         awarenessSphere.OnColliderEntersAwareness += TargetIfPlayer;
-        //hearingScript.OnSoundHeard += InvestigateSound;
+        hearingScript.OnSoundHeard += InvestigateSound;
         //When the explosion awareness picks up on a sound, this enemy takes cover
     }
 
     private void OnDisable()
     {
         awarenessSphere.OnColliderEntersAwareness -= TargetIfPlayer;
-        //hearingScript.OnSoundHeard -= InvestigateSound;
+        hearingScript.OnSoundHeard -= InvestigateSound;
     }
 
     // Update is called once per frame

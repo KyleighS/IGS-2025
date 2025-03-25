@@ -1,21 +1,29 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ForestSceneEvidence : MonoBehaviour
 {
     public TestDialogueEvidence test;
-    public GameObject testEvidence;
+    public List<GameObject> testEvidence;
 
     public void Start()
     {
-        if(test.evidenceActive == true)
+        Debug.Log("Evidence State: "+test.evidenceActive);
+        if (test.evidenceActive == true)
         {
+            for(int i = 0; i < testEvidence.Count; i++)
+            {
+                testEvidence[i].SetActive(true);
+            }
             Debug.Log("Evidence is active");
-            testEvidence.SetActive(true);
         }
         else
         {
             Debug.Log("Evidence is deactive");
-            testEvidence.SetActive(false);
+            for(int i = 0;i < testEvidence.Count; i++)
+            {
+                testEvidence[i].SetActive(false);
+            }
         }
     }
 }
