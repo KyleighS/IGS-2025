@@ -26,7 +26,7 @@ public class IdleState : StateClass
     public override void OnEnterState()
     {
         waitingTimeLeft = waitingTime;
-        Debug.Log("Waiting");
+        //Debug.Log("Waiting");
     }
 
     //Every frame we count down from the waitingTimeLeft variable. When the timer reaches zero we change the state to patrolling
@@ -39,9 +39,15 @@ public class IdleState : StateClass
             ChangeState(creatureScript.roamingState, ref creatureScript.currentState);
         }
 
+        //if (creatureScript.CheckIfPlayerVisible())
+        //{
+        //    ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+        //}
+
         if (creatureScript.CheckIfPlayerVisible())
         {
-            ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+            Debug.Log("Player is visable(I)");
+            ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
         }
     }
 
@@ -54,6 +60,6 @@ public class IdleState : StateClass
     //When this enemy exits the idle state they display a message
     public override void OnExitState()
     {
-        Debug.Log("Alright time to do something.");
+        //Debug.Log("Alright time to do something.");
     }
 }

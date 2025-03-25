@@ -2,41 +2,51 @@ using UnityEngine;
 
 public class SoundClass
 {
+    //The source that plays this sound
     public AudioSource source;
+    //The clip that we're playing
     public AudioClip clip;
-    public Vector3 position;
+    //The range of the sound
     public float range;
+    //The position of the sound
+    public Vector3 position;
 
-    public SoundClass(AudioSource source, AudioClip clip, Vector3 position, float range)
+    //A constructor for this class so we can pass information to the object
+    public SoundClass(AudioSource source, AudioClip clip, float range, Vector3 position)
     {
         this.source = source;
         this.clip = clip;
-        this.position = position;
         this.range = range;
+        this.position = position;
     }
 
+    /// <summary>
+    /// Play the sound of this SoundClass object
+    /// </summary>
     public void Play()
     {
         this.source.clip = this.clip;
         this.source.transform.position = this.position;
         this.source.Play();
+
         RangeNotify();
     }
 
+    /// <summary>
+    /// Gets all the EnemyHearingScript instances in range and notifies them that this sound has been played.
+    /// </summary>
     protected virtual void RangeNotify()
     {
         Collider[] listeners = Physics.OverlapSphere(this.position, this.range);
-        //Gizmos.DrawSphere(this.position, this.range);
 
-        //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        //sphere.transform.localScale = Vector3.one * this.range * 2f;
-        //sphere.transform.position = this.position;
-
+        //For each collider in range
         foreach (var listener in listeners)
         {
-            if (listener.TryGetComponent<CreatureHearing>(out var enemyHearing))
+            //If the game object with the collider has an EnemyHearingScript, 
+            if (listener.TryGetComponent<CreatureHearing>(out var creatureHearing))
             {
-                enemyHearing.CheckIfHeard(this);
+                //Tell it to check if they could hear this sound
+                creatureHearing.CheckIfHeard(this);
             }
         }
     }

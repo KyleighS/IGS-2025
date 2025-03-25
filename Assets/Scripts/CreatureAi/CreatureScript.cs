@@ -1,9 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreatureScript : MonoBehaviour
 {
+    public GameManager gameManager;
+    public string sceneName;
     //The script in charge of controlling the navigation of this AI agent
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
+    public bool creatureInView = false;
 
     [Header("Awareness")]
     //The script that becomes aware of surrounding entities
@@ -12,6 +17,8 @@ public class CreatureScript : MonoBehaviour
     public string playerTag;
     //The target
     public GameObject target;
+    public int radius = 10;
+    public Vector3 pointBehindPlayer;
 
     [Header("Vision")]
     //The degree of visibility of this enemy
@@ -37,22 +44,30 @@ public class CreatureScript : MonoBehaviour
     public StateClass stalkState;
     public StateClass attackState;
 
+    private Vector3 closetPoint;
+    private float closestDis;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         //Get the navmeshagent in this game object
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        sceneName = SceneManager.GetActiveScene().name;
 
         idleState = new IdleState(this);
         roamingState = new RoamingState(this);
         chaseState = new ChaseState(this);
         searchState = new SearchingState(this);
-        //takeCoverState = new FSM_TakingCover(this);
+        stalkState = new StalkingState(this);
+        attackState = new AttackState(this);
+        hideState = new HideState(this);
 
         //Entry state gets assigned
         currentState = idleState;
         currentState.OnEnterState();
+
+        creatureInView = false;
     }
 
     private void OnEnable()
@@ -69,13 +84,12 @@ public class CreatureScript : MonoBehaviour
     private void OnDisable()
     {
         awarenessSphere.OnColliderEntersAwareness -= TargetIfPlayer;
-        hearingScript.OnSoundHeard -= InvestigateSound;
+        //hearingScript.OnSoundHeard -= InvestigateSound;
     }
 
     // Update is called once per frame
     private void Update()
     {
-
         //Every frame we call the corresponding function on the current state
         currentState.OnEveryFrame();
     }
@@ -83,6 +97,7 @@ public class CreatureScript : MonoBehaviour
     private void FixedUpdate()
     {
         currentState.OnEveryPhysicsFrame();
+        pointBehindPlayer = (-1 * target.transform.forward * radius) + target.transform.position;
     }
 
     /// <summary>
@@ -93,7 +108,7 @@ public class CreatureScript : MonoBehaviour
     {
         if (col.gameObject.CompareTag(playerTag))
         {
-            Debug.Log("Player is in awareness");
+            //Debug.Log("Player is in awareness");
         }
     }
 
@@ -108,25 +123,18 @@ public class CreatureScript : MonoBehaviour
         //Debug.Log(awarenessSphere.IsTagInRange(playerTag, out player));
         if (!awarenessSphere.IsTagInRange(playerTag, out player))
         {
-            Debug.Log("Player isnt visable (TagRange)");
+            //Debug.Log("Player isnt visable (TagRange)");
             return false;
         }
 
-        //if (!IsObjectInRange(player.transform))
-        //{
-        //    Debug.Log("Player isnt visable (ObjRange)");
-
-        //    return false;
-        //}
-
         if (!IsObjectVisible(player.transform))
         {
-            Debug.Log("Player isnt visable (ObjVis)");
+            //Debug.Log("Player isnt visable (ObjVis)");
             return false;
         }
 
         target = player.gameObject;
-        Debug.Log("Player detected!");
+        //Debug.Log("Player detected!");
 
         return true;
     }
@@ -177,18 +185,29 @@ public class CreatureScript : MonoBehaviour
         ((SearchingState)searchState).SetTargetPos(sound.position);
         currentState.ChangeState(searchState, ref currentState);
     }
+    public Vector3 FindHidingPoint()
+    {
+        closetPoint = gameManager.creatureHidePoints[0].transform.position;
+        closestDis = Vector3.Distance(this.transform.position, closetPoint);
 
-    //public void TakeCover(SoundClass sound)
-    //{
-    //    if (sound is not WarningSoundClass)
-    //    {
-    //        Debug.Log("Ignoring sound because it's not a warning sound");
-    //        return;
-    //    }
+        Vector3 dirToPlayer = target.transform.position - this.transform.position;
 
-    //    WarningSoundClass warningSound = (WarningSoundClass)sound;
+        for (int i = 0; i >= gameManager.creatureHidePoints.Count; i++)
+        {
+            Vector3 tempPoint = gameManager.creatureHidePoints[i].transform.position;
+            float tempDis = Vector3.Dot(this.transform.position, tempPoint);
 
-    //    ((FSM_TakingCover)takeCoverState).SetExplosion(warningSound.explosionSource);
-    //    currentState.ChangeState(takeCoverState, ref currentState);
-    //}
+            Vector3 dirToLocation = tempPoint - this.transform.position;
+
+            if (Vector3.Dot(dirToPlayer.normalized, dirToLocation.normalized) > 0)
+            {
+                if (tempDis < closestDis)
+                {
+                    closestDis = tempDis;
+                    closetPoint = tempPoint;
+                }
+            }
+        }
+        return closetPoint;
+    }
 }

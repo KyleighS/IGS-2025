@@ -11,7 +11,6 @@ public class RoamingState : StateClass
     public Vector3 targetPos;
 
 
-
     public RoamingState(CreatureScript creatureScript) : base(creatureScript) { }
 
     public override void ChangeState(StateClass newState, ref StateClass currentState)
@@ -33,7 +32,7 @@ public class RoamingState : StateClass
         //We refresh the target position so it matches the one calculated by the navmesh
         //targetPos = creatureScript.navMeshAgent.pathEndPosition;
         //
-        Debug.Log("Moving to " + targetPos.ToString());
+        //Debug.Log("Moving to " + targetPos.ToString());
     }
 
     public override void OnEveryFrame()
@@ -50,7 +49,19 @@ public class RoamingState : StateClass
 
         if (creatureScript.CheckIfPlayerVisible())
         {
-            ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+            if(creatureScript.sceneName == "Night 3")
+            {
+                ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
+            }
+            if(creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
+            {
+                ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+            }
+        }
+
+        if (creatureScript.creatureInView && creatureScript.sceneName == "Night 2" || creatureScript.sceneName == "Night 3")
+        {
+            ChangeState(creatureScript.hideState, ref creatureScript.currentState);
         }
     }
 
@@ -61,6 +72,17 @@ public class RoamingState : StateClass
 
     public override void OnExitState()
     {
-        Debug.Log("Leaving patrol state");
+        //Debug.Log("Leaving patrol state");
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if(creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
+        {
+            if (other.tag == "Player")
+            {
+                ChangeState(creatureScript.attackState, ref creatureScript.currentState);
+            }
+
+        }
     }
 }

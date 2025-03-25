@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FootSteps
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f5f95f98d07d2e34591f20810d243f10, type: 3}
-  range: 10
+  range: 30

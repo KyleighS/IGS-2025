@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ChaseState : StateClass
+public class StalkingState : StateClass
 {
     //Instead of recalculating every frame, we only do it every so often to save on performance
     public float recalculatePathEverySeconds = 1f;
@@ -10,9 +10,16 @@ public class ChaseState : StateClass
     public float destinationTolerance = 1f;
     //The destination of this enemy
     public Vector3 targetPos;
+    public StalkingState(CreatureScript creatureScript) : base(creatureScript) { }
 
-    public ChaseState(CreatureScript creatureScript) : base(creatureScript)
+    public override void OnEnterState()
     {
+        Debug.Log("Creature following player");
+    }
+
+    public override void OnExitState()
+    {
+
     }
 
     public override void ChangeState(StateClass newState, ref StateClass currentState)
@@ -23,10 +30,6 @@ public class ChaseState : StateClass
         currentState = newState;
         //The new current state executes its enter function
         currentState.OnEnterState();
-    }
-
-    public override void OnEnterState()
-    {
     }
 
     public override void OnEveryFrame()
@@ -52,31 +55,21 @@ public class ChaseState : StateClass
         if (timer <= 0f)
         {
             //We set the new "last known location", calculate the path, and reset the timer
-            targetPos = creatureScript.target.transform.position;
+            targetPos = creatureScript.pointBehindPlayer;
             creatureScript.navMeshAgent.SetDestination(targetPos);
             timer = recalculatePathEverySeconds;
         }
+
+        //changes to hide state if sen by the player
+        if (creatureScript.creatureInView)
+        {
+            ChangeState(creatureScript.hideState, ref creatureScript.currentState);
+        }
+
     }
 
     public override void OnEveryPhysicsFrame()
     {
 
-    }
-
-    public override void OnExitState()
-    {
-
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
-        {
-            if (other.tag == "Player")
-            {
-                ChangeState(creatureScript.attackState, ref creatureScript.currentState);
-            }
-
-        }
     }
 }

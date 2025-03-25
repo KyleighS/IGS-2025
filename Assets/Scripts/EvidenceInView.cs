@@ -6,11 +6,14 @@ using UnityEngine.Rendering.Universal;
 
 public class EvidenceInView : MonoBehaviour
 {
+    public CreatureScript creatureScript;
     public float viewRadius;
+    public float creatureViewRadius;
     [Range(0,360)]
     public float viewAngle;
 
     public LayerMask evidenceMask;
+    public LayerMask creatureMask;
     public LayerMask obstacleMask;
 
     [HideInInspector]
@@ -35,6 +38,7 @@ public class EvidenceInView : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             FindVisibleEvidence();
+            FindCreature();
         }
     }
 
@@ -60,6 +64,29 @@ public class EvidenceInView : MonoBehaviour
                     visibleEvidence.Add(evidence);
                     //Debug.Log("Current layer: " + evidenceInViewRadius.layer);
                     evidenceOnScreen = true;
+                }
+            }
+        }
+    }
+
+    void FindCreature()
+    {
+        //Debug.Log("list was cleared");
+        Collider[] creature = Physics.OverlapSphere(transform.position, creatureViewRadius, creatureMask);
+
+        for (int i = 0; i < creature.Length; i++)
+        {
+            Transform creaturePos = creature[i].transform;
+            Vector3 dirToCreature = (creaturePos.position - transform.position).normalized;
+
+            if (Vector3.Angle(mainCam.transform.forward, dirToCreature) < viewAngle / 2f)
+            {
+                float distToCreature = Vector3.Distance(transform.position, creaturePos.position);
+                Debug.DrawLine(transform.position, creaturePos.position, Color.green, 0.5f);
+
+                if (!Physics.Raycast(transform.position, dirToCreature, distToCreature, obstacleMask))
+                {
+                    creatureScript.creatureInView = true;
                 }
             }
         }

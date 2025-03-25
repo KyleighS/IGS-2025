@@ -49,13 +49,17 @@ public class Movement : MonoBehaviour
         controller.Move(move * curSpeed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        PlaySound();
 
+        if(move.magnitude != 0 && !audioSource.isPlaying)
+        {
+            PlaySound();
+        }
     }
 
     public virtual void PlaySound()
     {
-        newSound = new SoundClass(audioSource, sound.clip, this.transform.position, sound.range);
+        newSound = new SoundClass(audioSource, sound.clip, sound.range, this.transform.position);
         newSound.Play();
+
     }
 }

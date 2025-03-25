@@ -7,8 +7,6 @@ public class SearchingState : StateClass
     //The destination of this enemy
     public Vector3 targetPos;
 
-
-
     public SearchingState(CreatureScript creatureScript) : base(creatureScript) { }
 
     public override void ChangeState(StateClass newState, ref StateClass currentState)
@@ -48,10 +46,12 @@ public class SearchingState : StateClass
             ChangeState(creatureScript.idleState, ref creatureScript.currentState);
         }
 
-
         if (creatureScript.CheckIfPlayerVisible())
         {
-            ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+            if (creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
+            {
+                ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
+            }
         }
     }
 

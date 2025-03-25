@@ -143,7 +143,8 @@ GameObject:
   - component: {fileID: 52175195}
   - component: {fileID: 52175199}
   - component: {fileID: 52175200}
-  m_Layer: 0
+  - component: {fileID: 52175201}
+  m_Layer: 9
   m_Name: CreatureStandin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +254,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -277,16 +278,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc082c868a9de174b8268b07aaade3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 607644954}
   navMeshAgent: {fileID: 52175199}
+  creatureInView: 0
   awarenessSphere: {fileID: 453340337}
   playerTag: Player
   target: {fileID: 343632982357889778}
+  radius: 20
+  pointBehindPlayer: {x: 0, y: 0, z: 0}
   coneOfVisionAngle: 3
   visionLayers:
     serializedVersion: 2
     m_Bits: 1
   eyes: {fileID: 427336639}
-  hearingScript: {fileID: 0}
+  hearingScript: {fileID: 52175201}
+--- !u!114 &52175201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52175194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d6f8d935a63aa4e89cce174a6db788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canHearThroughWalls: 1
 --- !u!1 &75115911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2136582346811323906, guid: 937d41d9417b55f43ad742bfe810fbe0, type: 3}
@@ -674,7 +692,7 @@ GameObject:
   - component: {fileID: 427336642}
   - component: {fileID: 427336641}
   - component: {fileID: 427336640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +893,7 @@ GameObject:
   - component: {fileID: 453340339}
   - component: {fileID: 453340341}
   - component: {fileID: 453340337}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +930,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 11}
+  m_LocalScale: {x: 1, y: 1, z: 28}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 52175198}
@@ -1985,9 +2003,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cca20b65fa3f37489db65e15e609f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureScript: {fileID: 0}
   viewRadius: 0
+  creatureViewRadius: 0
   viewAngle: 0
   evidenceMask:
+    serializedVersion: 2
+    m_Bits: 0
+  creatureMask:
     serializedVersion: 2
     m_Bits: 0
   obstacleMask:
@@ -2495,6 +2518,37 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1998060235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998060236}
+  m_Layer: 0
+  m_Name: HidePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998060236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998060235}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 70, y: 0, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091244247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,6 +2681,18 @@ PrefabInstance:
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 954011113}
+    - target: {fileID: 8540862492834529174, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
+      propertyPath: creatureScript
+      value: 
+      objectReference: {fileID: 52175200}
+    - target: {fileID: 8540862492834529174, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
+      propertyPath: creatureViewRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540862492834529174, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
+      propertyPath: creatureMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 8718093724929206969, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.2
@@ -2667,8 +2733,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 913969156703748535, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2979,6 +3044,14 @@ PrefabInstance:
       propertyPath: 'picSlots.Array.data[15]'
       value: 
       objectReference: {fileID: 1301298027}
+    - target: {fileID: 7509753046600806760, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+      propertyPath: creatureHidePoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509753046600806760, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+      propertyPath: 'creatureHidePoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1998060235}
     - target: {fileID: 8963265529720765474, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: camUI
       value: 
@@ -3114,3 +3187,4 @@ SceneRoots:
   - {fileID: 1529292605}
   - {fileID: 52175198}
   - {fileID: 1257493324}
+  - {fileID: 1998060236}
