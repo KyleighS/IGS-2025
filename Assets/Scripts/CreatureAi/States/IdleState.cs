@@ -4,9 +4,9 @@ using UnityEngine;
 public class IdleState : StateClass
 {
     //The time that this enemy waits in idle before going on patrol
-    public float waitingTime = 0f;
+    public float waitingTime = 5f;
     //The time remaining before this enemy changes states naturally
-    protected float waitingTimeLeft = 0f;
+    protected float waitingTimeLeft = 5f;
 
     //The constructor, which also executes the basic constructor for this class
     public IdleState(CreatureScript creatureScript) : base(creatureScript) { }
@@ -26,7 +26,7 @@ public class IdleState : StateClass
     public override void OnEnterState()
     {
         waitingTimeLeft = waitingTime;
-        Debug.Log("Waiting");
+        //Debug.Log("Waiting");
     }
 
     //Every frame we count down from the waitingTimeLeft variable. When the timer reaches zero we change the state to patrolling
@@ -39,11 +39,16 @@ public class IdleState : StateClass
             ChangeState(creatureScript.roamingState, ref creatureScript.currentState);
         }
 
-
         //if (creatureScript.CheckIfPlayerVisible())
         //{
         //    ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
         //}
+
+        if (creatureScript.CheckIfPlayerVisible())
+        {
+            Debug.Log("Player is visable(I)");
+            ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
+        }
     }
 
     //This state does nothing on every fixed frame
@@ -55,6 +60,6 @@ public class IdleState : StateClass
     //When this enemy exits the idle state they display a message
     public override void OnExitState()
     {
-        Debug.Log("Alright time to do something.");
+        //Debug.Log("Alright time to do something.");
     }
 }

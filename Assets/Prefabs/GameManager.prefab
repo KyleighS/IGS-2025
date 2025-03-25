@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1800363730476393022}
   - component: {fileID: 7509753046600806760}
   - component: {fileID: 8963265529720765474}
+  - component: {fileID: 4983329044810540471}
+  - component: {fileID: 5539632485840403532}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,9 +66,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  creatureHidePoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   winOverlay: {fileID: 0}
-  allEvidence: 5
+  allEvidence: 2
   evidenceSlider: {fileID: 0}
+  nextScene: Day3
 --- !u!114 &8963265529720765474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 7509753046600806760}
+  creatureScript: {fileID: 0}
   photoAlbum: {fileID: 0}
   evidenceInView: {fileID: 0}
   photoDisplayArea: {fileID: 0}
@@ -92,3 +105,32 @@ MonoBehaviour:
   flashTime: 0.5
   fadingAnimation: {fileID: 0}
   MovingPhoto: {fileID: 0}
+--- !u!114 &4983329044810540471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409660779690442049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca3786b532efc84aa78d2c09e521a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerTxt: {fileID: 0}
+  timeRemaining: 300
+--- !u!114 &5539632485840403532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409660779690442049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d230ea2a415d4082f4adc42a4152e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test: {fileID: 11400000, guid: 7b02ed87f4b9bd147bbab9452b62cb77, type: 2}
+  testEvidence:
+  - {fileID: 0}

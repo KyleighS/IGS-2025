@@ -37,7 +37,7 @@ public class CameraUI : MonoBehaviour
     void Start()
     {
         tempColor = dot.color;
-        //batteryCharge = fullBattery;
+        batteryCharge = fullBattery;
     }
 
     private void Update()
@@ -69,12 +69,12 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
-        if (batteryCharge <= 0)
-        {
-            camOverlay.SetActive(false);
-            bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
-            grain.active = !grain.active;
-        }
+        //if (batteryCharge <= 0)
+        //{
+        //    camOverlay.SetActive(false);
+        //    bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
+        //    grain.active = !grain.active;
+        //}
         //if (Input.GetKeyDown(KeyCode.R))
         //{
         //    ReloadBattery();
@@ -122,37 +122,11 @@ public class CameraUI : MonoBehaviour
             }
         }
 
-        //foreach (KeyValuePair<string, bool> item in gameManager.inventory)
-        //{
-        //    if (item.Key == "Battery")
-        //    {
-        //        batteryCharge = fullBattery;
-        //        batterySlider.value = batteryCharge;
-        //        gameManager.inventory.Remove(item.Key);
-
-        //    }
-        //}
 
     }
     public int GetBatteryCount()
     {
         int batteryCount = 0;
-
-        //for (int i = 0; i < gameManager.inventory.Count; i++)
-        //{
-        //    if (gameManager.inventory[i] == "Battery")
-        //    {
-        //        batteryCount++;
-        //    }
-        //}
-
-        //foreach (KeyValuePair<string, bool> item in gameManager.inventory)
-        //{
-        //    if (item.Key == "Battery")
-        //    {
-        //        batteryCount++;
-        //    }
-        //}
 
         return batteryCount;
     }

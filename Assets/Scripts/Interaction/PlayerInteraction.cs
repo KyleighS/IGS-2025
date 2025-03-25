@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public GameObject interactionUI;
     public TextMeshProUGUI interactionText;
+    public GameObject cursor;
 
 
     private void Update()
@@ -29,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
 
         bool hitSomething = false;
         interactionUI.SetActive(false);
+        cursor.SetActive(true);
 
         if (Physics.Raycast(ray, out hit, interactionDistance))
         {
@@ -40,6 +42,7 @@ public class PlayerInteraction : MonoBehaviour
                 //Debug.Log("Description was called");
                 interactionText.text = interactable.GetDescription();
                 interactionUI.SetActive(hitSomething);
+                cursor.SetActive(false);
 
                 if (Input.GetKeyDown(KeyCode.E) && !camUI.camOverlay.activeSelf)
                 {

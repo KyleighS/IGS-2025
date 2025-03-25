@@ -20,6 +20,7 @@ public class CreatureAwareness : MonoBehaviour, IAwareness
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log(other.gameObject.ToString());
         AddToAwarenessList(other);
     }
 
@@ -56,7 +57,6 @@ public class CreatureAwareness : MonoBehaviour, IAwareness
     public bool IsTagInRange(string tag, out Collider col)
     {
         col = collidersInAwareness.Find(x => x.CompareTag(tag));
-
         return col != null;
     }
 }

@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [Header("Footsteps")]
+    public SoundClip_ScriptableObj sound;
+    public AudioSource audioSource;
+    protected SoundClass newSound;
+
     private float x;
     private float z;
 
@@ -12,6 +17,14 @@ public class Movement : MonoBehaviour
     public float sprintSpeed = 2f;
 
     public Vector3 velocity;
+
+    private void Awake()
+    {
+        if (sound != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +47,17 @@ public class Movement : MonoBehaviour
         controller.Move(move * curSpeed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if(move.magnitude != 0 && !audioSource.isPlaying)
+        {
+            PlaySound();
+        }
+    }
+
+    public virtual void PlaySound()
+    {
+        newSound = new SoundClass(audioSource, sound.clip, sound.range, this.transform.position);
+        newSound.Play();
 
     }
 }

@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueTxt;
     public GameObject dialogueBox;
     public bool inDialogue = false;
+    public bool spawnEvidence;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        spawnEvidence = true;
         inDialogue = false;
         dialogueBox.SetActive(false);
         Debug.Log("End of conversation.");

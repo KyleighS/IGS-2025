@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ScreenShot : MonoBehaviour
 {
     public GameManager gameManager;
+    public CreatureScript creatureScript;
     public GameObject photoAlbum;
     public EvidenceInView evidenceInView;
 
@@ -47,7 +48,7 @@ public class ScreenShot : MonoBehaviour
             {
                 //calls the TakePhoto function
                 StartCoroutine(TakePicture());
-                if (evidenceInView.evidenceOnScreen)
+                if (evidenceInView.evidenceOnScreen || creatureScript.creatureInView)
                 {
                     gameManager.evidenceSlider.value++;
                 }
