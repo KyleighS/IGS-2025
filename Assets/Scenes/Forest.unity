@@ -18741,7 +18741,7 @@ GameObject:
   - component: {fileID: 453071006}
   - component: {fileID: 453071005}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sunlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18843,13 +18843,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453071004}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 840.8549, y: 37.77877, z: 123.01508}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &453121093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28828,11 +28828,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cca20b65fa3f37489db65e15e609f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureScript: {fileID: 0}
   viewRadius: 10
+  creatureViewRadius: 0
   viewAngle: 87
   evidenceMask:
     serializedVersion: 2
     m_Bits: 128
+  creatureMask:
+    serializedVersion: 2
+    m_Bits: 0
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
@@ -28857,6 +28862,7 @@ MonoBehaviour:
   interactionDistance: 6
   interactionUI: {fileID: 1378530284}
   interactionText: {fileID: 1819374386}
+  cursor: {fileID: 0}
 --- !u!114 &698437541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28869,6 +28875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e7306f6c651fa4c82c733eaf4c89e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  audioSource: {fileID: 0}
   controller: {fileID: 698437542}
   baseSpeed: 10
   curSpeed: 0
@@ -43865,6 +43873,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6a21d322e0af9e41bb51a86bed225c8, type: 3}
   m_PrefabInstance: {fileID: 1008301652}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1008958468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008958471}
+  - component: {fileID: 1008958470}
+  - component: {fileID: 1008958469}
+  m_Layer: 0
+  m_Name: Moonlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008958469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008958468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!108 &1008958470
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008958468}
+  m_Enabled: 1
+  serializedVersion: 11
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!4 &1008958471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008958468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1011236127
 GameObject:
   m_ObjectHideFlags: 0
@@ -57337,6 +57466,7 @@ GameObject:
   - component: {fileID: 1333015054}
   - component: {fileID: 1333015055}
   - component: {fileID: 1333015057}
+  - component: {fileID: 1333015058}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -57359,9 +57489,11 @@ MonoBehaviour:
   inventory: []
   pictures: []
   picSlots: []
+  creatureHidePoints: []
   winOverlay: {fileID: 0}
   allEvidence: 5
   evidenceSlider: {fileID: 0}
+  nextScene: 
 --- !u!114 &1333015055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57375,6 +57507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  creatureScript: {fileID: 0}
   photoAlbum: {fileID: 0}
   evidenceInView: {fileID: 0}
   photoDisplayArea: {fileID: 905038613}
@@ -57415,7 +57548,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test: {fileID: 11400000, guid: d8529789c9852d7498176b75c1520e45, type: 2}
-  testEvidence: {fileID: 649839326}
+  testEvidence:
+  - {fileID: 0}
+--- !u!114 &1333015058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333015053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1592a27ec68cff94fab5810626e7de39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 5
+  startHour: 10
+  sunLight: {fileID: 453071006}
+  sunriseHour: 6
+  sunsetHour: 20.3
+  timeTxt: {fileID: 0}
+  dayAmbientLight: {r: 0.56078434, g: 0.6039216, b: 0.6862745, a: 1}
+  nightAmbientLight: {r: 0.15686275, g: 0.3137255, b: 0.39215687, a: 1}
+  lightChangeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24948761
+      value: 0.80434245
+      inSlope: 0.64020485
+      outSlope: 0.64020485
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.5603883
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSunlightIntensity: 0
+  moonLight: {fileID: 0}
+  maxMoonlightIntensity: 0
 --- !u!1001 &1335552102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89831,13 +90021,15 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 453071007}
+  - {fileID: 1008958471}
+  - {fileID: 1333015056}
   - {fileID: 1337683096}
   - {fileID: 909172948}
   - {fileID: 1398077045}
   - {fileID: 698437546}
   - {fileID: 833313627}
   - {fileID: 1701879080}
-  - {fileID: 1333015056}
   - {fileID: 731869033}
   - {fileID: 664537182}
   - {fileID: 1293595891}
@@ -89858,7 +90050,6 @@ SceneRoots:
   - {fileID: 1666345214}
   - {fileID: 2081877134}
   - {fileID: 1294567378}
-  - {fileID: 453071007}
   - {fileID: 55644676}
   - {fileID: 2120533130}
   - {fileID: 492146077}
