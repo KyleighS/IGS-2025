@@ -14,6 +14,11 @@ public class CameraMove : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+        Debug.Log("FPS: " + 1.0f / Time.deltaTime);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {

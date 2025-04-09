@@ -34,15 +34,13 @@ public class EvidencePickUp : MonoBehaviour, IInteractable
                 hitInfo.collider.gameObject.SetActive(false);
                 //Destroy(hitInfo.collider.gameObject);
 
-                if (hitInfo.collider.gameObject.tag == "Evidence")
-                {
-                    if (evidenceSlider.value >= allEvidence)
+                if (evidenceSlider.value >= allEvidence)
                     {
                         winOverlay.SetActive(true);
                     }
 
                     evidenceSlider.value++;
-                }
+
 
             }
         }
