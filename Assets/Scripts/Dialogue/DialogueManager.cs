@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (sentences.Count > 0)
                 {
-                    //Debug.Log("NEXT SENTENCE");
+                    Debug.Log("NEXT SENTENCE");
                     DisplayNextSentence();
                 }
                 else
@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        //Debug.Log("Dialogue started");
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)

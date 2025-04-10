@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(false);
             Time.timeScale = 1f;
             isPaused = false;
-            timeController.UnpauseTimer();
+            //timeController.UnpauseTimer();
         }
         else
         {
@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
             isPaused = true;
-            timeController.PauseTimer();
+            //timeController.PauseTimer();
         }
     }
     public void MainMenu()
