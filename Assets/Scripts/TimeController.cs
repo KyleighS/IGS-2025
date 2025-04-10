@@ -31,6 +31,7 @@ public class TimeController : MonoBehaviour
 
     private TimeSpan sunriseTime;
     private TimeSpan sunsetTime;
+    bool pauseTimer;
 
     public DateTime curTime;
 
@@ -53,11 +54,14 @@ public class TimeController : MonoBehaviour
 
     private void UpdateTime()
     {
-        curTime = curTime.AddSeconds(Time.deltaTime + multiplier);
-
-        if(timeTxt != null )
+        if(!pauseTimer)
         {
-            timeTxt.text = curTime.ToString("HH:mm");
+            curTime = curTime.AddSeconds(Time.deltaTime + multiplier);
+
+            if(timeTxt != null )
+            {
+                timeTxt.text = curTime.ToString("HH:mm");
+            }
         }
     }
 
@@ -65,13 +69,16 @@ public class TimeController : MonoBehaviour
     {
         TimeSpan diff = fromTime - toTime;
 
-        if(diff.TotalSeconds > 0)
+        if(diff.TotalSeconds > 0 && !pauseTimer)
         {
             diff += TimeSpan.FromHours(24);
 
         }
         return diff;
     }
+
+    public void PauseTimer() => pauseTimer = true;
+    public void UnpauseTimer() => pauseTimer = false;
 
     private void RotateSun()
     {

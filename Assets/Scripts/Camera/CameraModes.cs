@@ -12,9 +12,11 @@ public class CameraModes : MonoBehaviour
     public GameObject thermalCam;
     public bool nightVisionState;
     public CameraUI camUI;
+    public GameObject questBar;
 
     private void Start()
     {
+        questBar.SetActive(true);
         camcorderOverlay.SetActive(false);
         thermalCam.SetActive(false);
         nightVisionState = false;
@@ -35,6 +37,7 @@ public class CameraModes : MonoBehaviour
 
             SetNightVision(false);
             thermalCam.SetActive(false);
+            questBar.SetActive(!questBar.activeSelf);
         }
 
         //activates nightvision if the camera is up and E is pressed

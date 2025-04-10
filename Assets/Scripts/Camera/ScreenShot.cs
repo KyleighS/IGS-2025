@@ -10,6 +10,7 @@ public class ScreenShot : MonoBehaviour
     public CreatureScript creatureScript;
     public GameObject photoAlbum;
     public EvidenceInView evidenceInView;
+    public GameObject cursor;
 
     [Header("Photo")]
     public Image photoDisplayArea;
@@ -36,6 +37,7 @@ public class ScreenShot : MonoBehaviour
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
         ogPos = this.transform.localPosition;
         ogScale = this.transform.localScale;
+        cursor.SetActive(true);
     }
 
     private void Update()
@@ -66,7 +68,8 @@ public class ScreenShot : MonoBehaviour
     {
         camUI.SetActive(false);
         photoAlbum.SetActive(false);
-        interactUI.SetActive(false);    
+        interactUI.SetActive(false); 
+        cursor.SetActive(false);
         StartCoroutine(FlashEffect());
         viewingPhoto = true;
 
@@ -94,6 +97,7 @@ public class ScreenShot : MonoBehaviour
         photoFrame.SetActive(true);
         fadingAnimation.Play("PhotoFadeIn");
         camUI.SetActive(true);
+        cursor.SetActive(true);
 
         StartCoroutine(FadePictureOUt());
 
@@ -129,10 +133,5 @@ public class ScreenShot : MonoBehaviour
         camFlash.SetActive(true);
         yield return new WaitForSeconds(flashTime);
         camFlash.SetActive(false);
-    }
-
-    public void PullUpPhoto()
-    {
-
     }
 }
