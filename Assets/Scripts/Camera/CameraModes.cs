@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CameraModes : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class CameraModes : MonoBehaviour
     public CameraUI camUI;
     public GameObject questBar;
     public GameObject timeTxt;
-    private bool volumeToneMapping;
 
     private void Start()
     {
@@ -25,8 +25,11 @@ public class CameraModes : MonoBehaviour
         SetNightVision(false);
         camUI.batteryCharge = camUI.fullBattery;
 
-        volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+        bool volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
         tonemapping.active = true;
+
+        bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+        shadows.active = true;
 
     }
 
@@ -43,6 +46,10 @@ public class CameraModes : MonoBehaviour
 
             bool toneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
             tonemapping.active = !tonemapping.active;
+
+
+            bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+            shadows.active = !shadows.active;
 
 
             SetNightVision(false);
@@ -65,6 +72,9 @@ public class CameraModes : MonoBehaviour
 
             bool toneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
             tonemapping.active = false;
+
+            bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+            shadows.active = false;
         }
 
         ////for testing only, will be moved once we have a menu for it
@@ -89,12 +99,15 @@ public class CameraModes : MonoBehaviour
         bool volumeBloom = volume.profile.TryGet(out Bloom bloom);
         bool volumeVignette = volume.profile.TryGet(out Vignette vignette);
         bool volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+        bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+        shadows.active = true;
 
         colorAdjustments.active = active;
         bloom.active = active;
         vignette.active = active;
         tonemapping.active = !tonemapping.active;
-        nightVisionState= active;
+        shadows.active = !shadows.active;
+        nightVisionState = active;
 
     }
 }
