@@ -14,6 +14,7 @@ public class CameraModes : MonoBehaviour
     public CameraUI camUI;
     public GameObject questBar;
     public GameObject timeTxt;
+    private bool volumeToneMapping;
 
     private void Start()
     {
@@ -23,6 +24,10 @@ public class CameraModes : MonoBehaviour
         nightVisionState = false;
         SetNightVision(false);
         camUI.batteryCharge = camUI.fullBattery;
+
+        volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+        tonemapping.active = true;
+
     }
 
     // Update is called once per frame
@@ -35,6 +40,10 @@ public class CameraModes : MonoBehaviour
       
             bool volumeGrain = volume.profile.TryGet(out FilmGrain grain);
             grain.active = !grain.active;
+
+            bool toneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+            tonemapping.active = !tonemapping.active;
+
 
             SetNightVision(false);
             thermalCam.SetActive(false);
@@ -53,6 +62,9 @@ public class CameraModes : MonoBehaviour
         {
             SetNightVision(false, thermalCam.activeSelf);
             thermalCam.SetActive(!thermalCam.activeSelf);
+
+            bool toneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+            tonemapping.active = false;
         }
 
         ////for testing only, will be moved once we have a menu for it
@@ -76,10 +88,13 @@ public class CameraModes : MonoBehaviour
         bool volumeColor = volume.profile.TryGet(out ColorAdjustments colorAdjustments);
         bool volumeBloom = volume.profile.TryGet(out Bloom bloom);
         bool volumeVignette = volume.profile.TryGet(out Vignette vignette);
+        bool volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
 
         colorAdjustments.active = active;
         bloom.active = active;
         vignette.active = active;
+        tonemapping.active = !tonemapping.active;
         nightVisionState= active;
+
     }
 }
