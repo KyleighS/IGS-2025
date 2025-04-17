@@ -33,6 +33,8 @@ public class CameraUI : MonoBehaviour
     private bool activated = true;
     public GameManager gameManager;
     public TextMeshProUGUI batCountTxt;
+    public GameObject deadBat;
+    public GameObject fullBat;
 
     public bool canNightvision;
     public bool canThermalVision;
@@ -76,12 +78,11 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
+
         if (batteryCharge <= 0)
         {
-            camOverlay.SetActive(false);
-            bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
-            grain.active = !grain.active;
-
+            deadBat.SetActive(true);
+            fullBat.SetActive(false);
             canNightvision = false;
             canThermalVision = false;
             canTakePic = false;
@@ -125,6 +126,8 @@ public class CameraUI : MonoBehaviour
                 batteryCharge = fullBattery;
                 batterySlider.value = batteryCharge;
                 gameManager.inventory.Remove(gameManager.inventory[i]);
+                deadBat.SetActive(false);
+                fullBat.SetActive(true);
                 //Debug.Log("Player has battery");
             }
             else
