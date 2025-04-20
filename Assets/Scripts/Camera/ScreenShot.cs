@@ -8,7 +8,6 @@ public class ScreenShot : MonoBehaviour
 {
     public GameManager gameManager;
     public CreatureScript creatureScript;
-    public CameraUI cameraUI;
     public GameObject photoAlbum;
     public EvidenceInView evidenceInView;
     public GameObject cursor;
@@ -16,7 +15,7 @@ public class ScreenShot : MonoBehaviour
     [Header("Photo")]
     public Image photoDisplayArea;
     public GameObject photoFrame;
-    public GameObject camOverlay;
+    public GameObject camUI;
     public GameObject interactUI;
     public Vector2 ogPos;
     public Vector3 ogScale;
@@ -44,7 +43,7 @@ public class ScreenShot : MonoBehaviour
     private void Update()
     {
         //checking if the camera ui is active and the player hits the right button
-        if(Input.GetMouseButtonDown(0) && camOverlay.activeSelf && cameraUI.canTakePic)
+        if(Input.GetMouseButtonDown(0) && camUI.activeSelf)
         {
             //makes sure a previous photo isnt still up
             if(!viewingPhoto)
@@ -61,13 +60,13 @@ public class ScreenShot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             photoAlbum.SetActive(!photoAlbum.activeSelf);
-            camOverlay.SetActive(false);
+            camUI.SetActive(false);
         }
     }
 
     IEnumerator TakePicture()
     {
-        camOverlay.SetActive(false);
+        camUI.SetActive(false);
         photoAlbum.SetActive(false);
         interactUI.SetActive(false); 
         cursor.SetActive(false);
@@ -97,7 +96,7 @@ public class ScreenShot : MonoBehaviour
 
         photoFrame.SetActive(true);
         fadingAnimation.Play("PhotoFadeIn");
-        camOverlay.SetActive(true);
+        camUI.SetActive(true);
         cursor.SetActive(true);
 
         StartCoroutine(FadePictureOUt());

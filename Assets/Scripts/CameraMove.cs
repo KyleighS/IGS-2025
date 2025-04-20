@@ -16,7 +16,7 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("FPS: " + 1.0f / Time.deltaTime);
+        Debug.Log("FPS: " + 1.0f / Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -31,6 +31,5 @@ public class CameraMove : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         player.Rotate(Vector3.up * mouseX);
 
-        //Debug.Log("FPS: " + 1.0f / Time.deltaTime);
     }
 }
