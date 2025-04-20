@@ -18,7 +18,8 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        //Debug.Log("Trigger called");
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        spawnEvidence = true;
+        //spawnEvidence = true;
     }
 }
