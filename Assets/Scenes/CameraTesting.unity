@@ -17675,6 +17675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 536941617159060807, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
     - target: {fileID: 6461750333547568144, guid: 7b9c14be01c8c144ca8d6fe6ac3e7788, type: 3}
       propertyPath: camUI
       value: 

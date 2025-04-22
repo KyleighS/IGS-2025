@@ -48,8 +48,8 @@ public class TimeController : MonoBehaviour
     void Update()
     {
         UpdateTime();
-        RotateSun();
-        UpdateLighting();
+        //RotateSun();
+        //UpdateLighting();
     }
 
     private void UpdateTime()
