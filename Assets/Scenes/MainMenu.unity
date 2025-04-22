@@ -4318,6 +4318,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f6a21d322e0af9e41bb51a86bed225c8, type: 3}
   m_PrefabInstance: {fileID: 85493858}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &85591010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2329933019612293484, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4f2a78e8e0f594f45b6076d59c72869c, type: 2}
+    - target: {fileID: 2329933019619580612, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_Name
+      value: Stone Troll
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 467.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 46.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 580.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2329933019620001444, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b9f6668c74fdc1d4a8215485fa79d7e1, type: 3}
 --- !u!1001 &86523940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63718,6 +63779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crab_Red
       objectReference: {fileID: 0}
+    - target: {fileID: 164426, guid: ebf04bb47e225144dbb48d365e0516da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493922, guid: ebf04bb47e225144dbb48d365e0516da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 467.6
@@ -87294,3 +87359,4 @@ SceneRoots:
   - {fileID: 1549250593}
   - {fileID: 191433297}
   - {fileID: 1531827531}
+  - {fileID: 85591010}
