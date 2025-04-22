@@ -16,7 +16,7 @@ public class CameraMove : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("FPS: " + 1.0f / Time.deltaTime);
+        //Debug.Log("FPS: " + 1.0f / Time.deltaTime);
     }
 
     // Update is called once per frame

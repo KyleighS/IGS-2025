@@ -22,6 +22,11 @@ public class CameraModes : MonoBehaviour
         nightVisionState = false;
         SetNightVision(false);
         camUI.batteryCharge = camUI.fullBattery;
+
+        bool volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+        tonemapping.active = true;
+        bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+        shadows.active = true;
     }
 
     // Update is called once per frame
@@ -34,6 +39,10 @@ public class CameraModes : MonoBehaviour
 
             bool volumeGrain = volume.profile.TryGet(out FilmGrain grain);
             grain.active = !grain.active;
+            bool volumeToneMapping = volume.profile.TryGet(out Tonemapping toneMapping);
+            toneMapping.active = !toneMapping.active;
+            bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+            shadows.active = !shadows.active;
 
             SetNightVision(false);
             thermalCam.SetActive(false);
@@ -51,13 +60,12 @@ public class CameraModes : MonoBehaviour
         {
             SetNightVision(false, thermalCam.activeSelf);
             thermalCam.SetActive(!thermalCam.activeSelf);
-        }
+            bool toneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+            tonemapping.active = false;
+            bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
+            shadows.active = false;
 
-        ////for testing only, will be moved once we have a menu for it
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    Application.Quit();
-        //}
+        }
 
         //Reloads battery when R is pressed even if the camera is down
         if (Input.GetKeyDown(KeyCode.R))
@@ -74,10 +82,14 @@ public class CameraModes : MonoBehaviour
         bool volumeColor = volume.profile.TryGet(out ColorAdjustments colorAdjustments);
         bool volumeBloom = volume.profile.TryGet(out Bloom bloom);
         bool volumeVignette = volume.profile.TryGet(out Vignette vignette);
+        bool volumeToneMapping = volume.profile.TryGet(out Tonemapping tonemapping);
+        bool volumeShadows = volume.profile.TryGet(out ShadowsMidtonesHighlights shadows);
 
         colorAdjustments.active = active;
         bloom.active = active;
         vignette.active = active;
         nightVisionState= active;
+        tonemapping.active = !tonemapping.active;
+        shadows.active = !shadows.active;
     }
 }
