@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     public float sprintSpeed = 2f;
 
     public Vector3 velocity;
+    private bool playingAnim;
 
     private void Awake()
     {

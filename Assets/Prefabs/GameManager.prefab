@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1800363730476393022}
   - component: {fileID: 7509753046600806760}
   - component: {fileID: 8963265529720765474}
-  - component: {fileID: 5539632485840403532}
+  - component: {fileID: 4365297835223167618}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -94,6 +94,7 @@ MonoBehaviour:
   creatureScript: {fileID: 0}
   photoAlbum: {fileID: 0}
   evidenceInView: {fileID: 0}
+  cursor: {fileID: 0}
   photoDisplayArea: {fileID: 0}
   photoFrame: {fileID: 0}
   camUI: {fileID: 0}
@@ -104,7 +105,7 @@ MonoBehaviour:
   flashTime: 0.5
   fadingAnimation: {fileID: 0}
   MovingPhoto: {fileID: 0}
---- !u!114 &5539632485840403532
+--- !u!114 &4365297835223167618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,9 +114,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 6409660779690442049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 309d230ea2a415d4082f4adc42a4152e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1592a27ec68cff94fab5810626e7de39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 11400000, guid: 7b02ed87f4b9bd147bbab9452b62cb77, type: 2}
-  testEvidence:
-  - {fileID: 0}
+  multiplier: 20
+  startHour: 10
+  sunLight: {fileID: 0}
+  sunriseHour: 6
+  sunsetHour: 20.5
+  timeTxt: {fileID: 0}
+  dayAmbientLight: {r: 0.56078434, g: 0.6039216, b: 0.6862745, a: 1}
+  nightAmbientLight: {r: 0.15686275, g: 0.3137255, b: 0.39215687, a: 1}
+  lightChangeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.26333818
+      value: 0.90281075
+      inSlope: 0.48034245
+      outSlope: 0.48034245
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.48573568
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSunlightIntensity: 1
+  moonLight: {fileID: 0}
+  maxMoonlightIntensity: 0.5
