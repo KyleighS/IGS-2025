@@ -4102,7 +4102,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7509753046600806760, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
   m_PrefabInstance: {fileID: 2012661705933905784}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356630768}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85fbcbd43fb999e42ab56863e7b970f8, type: 3}
@@ -9673,7 +9673,7 @@ MonoBehaviour:
   mainMenu: Night1
   pauseMenu: {fileID: 198078536}
   isPaused: 0
-  timeController: {fileID: 1356630773}
+  timeController: {fileID: 0}
 --- !u!114 &1302499598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10187,67 +10187,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343698629}
   m_CullTransparentMesh: 1
---- !u!1 &1356630768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6409660779690442049, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
-  m_PrefabInstance: {fileID: 2012661705933905784}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1356630773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356630768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1592a27ec68cff94fab5810626e7de39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multiplier: 20
-  startHour: 12
-  sunLight: {fileID: 1966877109}
-  sunriseHour: 6
-  sunsetHour: 20.5
-  timeTxt: {fileID: 281645302}
-  dayAmbientLight: {r: 0.56078434, g: 0.6039216, b: 0.68235296, a: 1}
-  nightAmbientLight: {r: 0.15686275, g: 0.16862746, b: 0.53333336, a: 1}
-  lightChangeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.18441613
-      value: 0.87614566
-      inSlope: 0.6142798
-      outSlope: 0.6142798
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 1
-      outWeight: 0.30992597
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxSunlightIntensity: 1
-  moonLight: {fileID: 1186343751}
-  maxMoonlightIntensity: 0.3
 --- !u!1 &1368182438
 GameObject:
   m_ObjectHideFlags: 0
@@ -17821,6 +17760,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4365297835223167618, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5539632485840403532, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -17957,10 +17900,7 @@ PrefabInstance:
     - {fileID: 5539632485840403532, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6409660779690442049, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1356630773}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
 --- !u!1001 &2749070711112134538
 PrefabInstance:

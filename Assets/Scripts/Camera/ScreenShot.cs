@@ -11,6 +11,7 @@ public class ScreenShot : MonoBehaviour
     public GameObject photoAlbum;
     public EvidenceInView evidenceInView;
     public GameObject cursor;
+    public AudioSource audioSource;
 
     [Header("Photo")]
     public Image photoDisplayArea;
@@ -50,9 +51,15 @@ public class ScreenShot : MonoBehaviour
             {
                 //calls the TakePhoto function
                 StartCoroutine(TakePicture());
+                audioSource.Play();
                 if (evidenceInView.evidenceOnScreen || creatureScript.creatureInView)
                 {
                     gameManager.evidenceSlider.value++;
+
+                    if (gameManager.evidenceSlider.value == gameManager.allEvidence)
+                    {
+                        gameManager.winOverlay.SetActive(true);
+                    }
                 }
             }
         }

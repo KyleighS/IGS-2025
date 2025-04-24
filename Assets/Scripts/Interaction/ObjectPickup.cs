@@ -42,6 +42,7 @@ public class ObjectPickup : MonoBehaviour, IInteractable
             if (hitInfo.collider.gameObject.tag == "Evidence")
             {
                 manager.inventory.Add(hitInfo.collider.gameObject);
+                manager.UpdateEvidence();   
                 Debug.Log("object was added");
 
                 hitInfo.collider.gameObject.SetActive(false);
@@ -51,8 +52,6 @@ public class ObjectPickup : MonoBehaviour, IInteractable
                 {
                     winOverlay.SetActive(true);
                 }
-
-                evidenceSlider.value++;
 
             }
         }

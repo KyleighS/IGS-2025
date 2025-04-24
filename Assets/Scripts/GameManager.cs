@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> creatureHidePoints;
 
     public GameObject winOverlay;
-    public int allEvidence = 5;
+    public int allEvidence;
     public Slider evidenceSlider;
     public string nextScene;
 
@@ -25,17 +25,16 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-
+          
     }
 
     public void UpdateEvidence()
     {
-
         for (int i = 0; i < inventory.Count; i++)
         {
             if (inventory[i].gameObject.tag == "Evidence")
             {
-                if (evidenceSlider.value >= allEvidence)
+                if (evidenceSlider.value == allEvidence)
                 {
                     winOverlay.SetActive(true);
                 }
