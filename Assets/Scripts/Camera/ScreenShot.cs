@@ -55,6 +55,11 @@ public class ScreenShot : MonoBehaviour
                 if (evidenceInView.evidenceOnScreen || creatureScript.creatureInView)
                 {
                     gameManager.evidenceSlider.value++;
+
+                    if (gameManager.evidenceSlider.value == gameManager.allEvidence)
+                    {
+                        gameManager.winOverlay.SetActive(true);
+                    }
                 }
             }
         }
