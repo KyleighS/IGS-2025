@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300635575160601247}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2280465, y: -0.055696175, z: 0.13293482, w: 0.9629232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.26531085, y: -0.000008731295, z: 0.000014036894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1087002299665672148}
   m_Father: {fileID: 3644014812908009672}
-  m_LocalEulerAnglesHint: {x: 27, y: -3, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866230201058932944
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,14 +56,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866230201058932944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06162845, y: 0.70441604, z: 0.06162845, w: 0.70441604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.13903283, y: -0.000000019073486, z: -0.00000015258789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4538734356519949189}
   m_Father: {fileID: 3965764855140889298}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 10}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973396184151319771
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 2100208028559941110}
   - component: {fileID: 5459872135671498636}
   - component: {fileID: 1058556038379161208}
+  - component: {fileID: 5187561018412613522}
+  - component: {fileID: 3448590998315683315}
   m_Layer: 0
   m_Name: casual_Male_G
   m_TagString: Untagged
@@ -154,8 +156,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1082646743766027305}
   - {fileID: 1046044035486659215}
@@ -190,13 +192,56 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616406060653692748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54f141628068b9b4493f69f797f003b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoPlayAnimations: 1
+  AutoPlayAnimations: 0
   PaletteOverride: {fileID: 0}
+--- !u!114 &5187561018412613522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616406060653692748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8976f75390c098043b5010c0920c44dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Joesph
+    sentences:
+    - Hello, you must be new around here.
+    - My names Joesph.
+    - I assume your hear cause of the rumors about the creature in the forest.
+    - 'If you ask me its just a big conspiracy, I''ve walked probally every inch
+      of that forest and never seen anything. '
+    - 'Though at one point I saw some weird things north of the cabin out there. '
+  spawnEvidence: 0
+--- !u!65 &3448590998315683315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616406060653692748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.9671173, y: 1.8712273, z: 0.54519653}
+  m_Center: {x: 0.016441345, y: 0.90684307, z: -0.008224487}
 --- !u!1 &1719302345640664642
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,14 +768,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6047034733186130620}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23469125, y: -0.0052243867, z: 0.12081762, w: 0.9645185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2653608, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4990318948219961236}
   m_Father: {fileID: 8377323680735176011}
-  m_LocalEulerAnglesHint: {x: 27, y: 3, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6175197368635041193
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,14 +864,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6363658411248272428}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06162845, y: -0.70441604, z: -0.06162845, w: 0.70441604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.13906406, y: -0.00002306547, z: 0.00011189282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3027511365607851364}
   m_Father: {fileID: 5378910195458090831}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -10}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6671289829942551938
 GameObject:
   m_ObjectHideFlags: 0

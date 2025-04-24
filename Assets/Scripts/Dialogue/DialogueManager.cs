@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.SceneView;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public bool inDialogue = false;
     public bool spawnEvidence;
+    public Movement playerMovement;
+    public CameraMove cameraMove;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (inDialogue)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 if (sentences.Count > 0)
                 {
@@ -40,6 +43,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         sentences.Clear();
+        playerMovement.GetComponent<Movement>().enabled = false;
+        cameraMove.GetComponent<CameraMove>().enabled = false;
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -61,6 +66,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        playerMovement.GetComponent<Movement>().enabled = true;
+        cameraMove.GetComponent<CameraMove>().enabled = true;
         spawnEvidence = true;
         inDialogue = false;
         dialogueBox.SetActive(false);

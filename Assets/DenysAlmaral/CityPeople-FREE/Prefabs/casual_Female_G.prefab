@@ -842,6 +842,8 @@ GameObject:
   - component: {fileID: 5776691538091650739}
   - component: {fileID: 489417422609642697}
   - component: {fileID: -4720535539113630595}
+  - component: {fileID: 2534348020502595840}
+  - component: {fileID: 3978506295303377927}
   m_Layer: 0
   m_Name: casual_Female_G
   m_TagString: Untagged
@@ -859,8 +861,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7639862655790943378}
   - {fileID: 4867218877455598026}
@@ -868,7 +870,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &489417422609642697
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -882,6 +884,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -894,11 +897,55 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6584613354768528393}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54f141628068b9b4493f69f797f003b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoPlayAnimations: 1
+  PaletteOverride: {fileID: 0}
+--- !u!65 &2534348020502595840
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584613354768528393}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8128215, z: 0.5200652}
+  m_Center: {x: -3.250902e-17, y: 0.8776745, z: -0.028962374}
+--- !u!114 &3978506295303377927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6584613354768528393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8976f75390c098043b5010c0920c44dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Sarah
+    sentences:
+    - 'Hi Im Sarah, I run this store. '
+    - 'Your pretty brave for staying in that cabin alone. People have reported trees
+      randomly getting cut down at night. '
+    - 'Last I heard there were about three. '
+    - 'Stay safe out there and buh bye now. '
+  spawnEvidence: 0
 --- !u!1 &6646269780412227657
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1026,9 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
