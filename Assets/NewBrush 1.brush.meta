@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/NewBrush 1.brush.meta
+guid: 0ae8493be21300845940f13f1bd1721a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+========
+guid: 99856f8f0ef47744294c672c6512ba6e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+>>>>>>>> 6c869a2f36d27647cfaa7b2daaefc93b18fc54b6:Assets/Blue.mat.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
