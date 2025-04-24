@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Forearm_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Leg Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001412}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001424}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Leg Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Forearm_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Leg Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Foot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 8610598108015644390}
   - component: {fileID: 144682056082898238}
   - component: {fileID: 4514026875553049034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stone Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,6 +513,8 @@ Transform:
   m_Children:
   - {fileID: 2329933019620001446}
   - {fileID: 2329933019620001464}
+  - {fileID: 2319528924552017597}
+  - {fileID: 838485791978174197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2329933019612293484
@@ -525,7 +527,7 @@ Animator:
   m_GameObject: {fileID: 2329933019619580612}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: adaa1ef3043dbca44acb65d2e4d5660a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f2a78e8e0f594f45b6076d59c72869c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -552,9 +554,10 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   sceneName: Night3
   loseSceen: {fileID: 0}
-  navMeshAgent: {fileID: 0}
+  animator: {fileID: 2329933019612293484}
+  navMeshAgent: {fileID: 4514026875553049034}
   creatureInView: 0
-  awarenessSphere: {fileID: 0}
+  awarenessSphere: {fileID: 608671586427491824}
   playerTag: Player
   target: {fileID: 0}
   radius: 20
@@ -563,8 +566,8 @@ MonoBehaviour:
   visionLayers:
     serializedVersion: 2
     m_Bits: 1
-  eyes: {fileID: 0}
-  hearingScript: {fileID: 0}
+  eyes: {fileID: 8700299215387071999}
+  hearingScript: {fileID: 144682056082898238}
 --- !u!114 &144682056082898238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d6f8d935a63aa4e89cce174a6db788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creatureScript: {fileID: 0}
+  creatureScript: {fileID: 8610598108015644390}
   canHearThroughWalls: 1
 --- !u!195 &4514026875553049034
 NavMeshAgent:
@@ -610,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001446}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stone Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Leg Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2329933019620001464}
   - component: {fileID: 2329933019608012718}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stone Troll Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001468}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2329933019620001470}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Foot_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,4 +934,101 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2329933019620001468}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8062173469645510240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838485791978174197}
+  - component: {fileID: 6866837768815712910}
+  - component: {fileID: 608671586427491824}
+  m_Layer: 9
+  m_Name: Spehere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &838485791978174197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062173469645510240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 28}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2329933019620001444}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6866837768815712910
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062173469645510240}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &608671586427491824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8062173469645510240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaf2e780abc16947914bab5a9b84d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8700299215387071999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2319528924552017597}
+  m_Layer: 9
+  m_Name: Eyes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2319528924552017597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700299215387071999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29, y: 5.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2329933019620001444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
