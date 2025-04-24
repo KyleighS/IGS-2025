@@ -491,7 +491,11 @@ GameObject:
   - component: {fileID: 8610598108015644390}
   - component: {fileID: 144682056082898238}
   - component: {fileID: 4514026875553049034}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 9
+>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b
   m_Name: Stone Troll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,10 +558,16 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   sceneName: Night3
   loseSceen: {fileID: 0}
+<<<<<<< HEAD
+  navMeshAgent: {fileID: 0}
+  creatureInView: 0
+  awarenessSphere: {fileID: 0}
+=======
   animator: {fileID: 2329933019612293484}
   navMeshAgent: {fileID: 4514026875553049034}
   creatureInView: 0
   awarenessSphere: {fileID: 608671586427491824}
+>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b
   playerTag: Player
   target: {fileID: 0}
   radius: 20
@@ -566,8 +576,13 @@ MonoBehaviour:
   visionLayers:
     serializedVersion: 2
     m_Bits: 1
+<<<<<<< HEAD
+  eyes: {fileID: 0}
+  hearingScript: {fileID: 0}
+=======
   eyes: {fileID: 8700299215387071999}
   hearingScript: {fileID: 144682056082898238}
+>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b
 --- !u!114 &144682056082898238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d6f8d935a63aa4e89cce174a6db788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  creatureScript: {fileID: 0}
+=======
   creatureScript: {fileID: 8610598108015644390}
+>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b
   canHearThroughWalls: 1
 --- !u!195 &4514026875553049034
 NavMeshAgent:
@@ -934,6 +953,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2329933019620001468}
+<<<<<<< HEAD
+=======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8062173469645510240
 GameObject:
@@ -1031,4 +1052,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2329933019620001444}
+>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

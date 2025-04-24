@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone3.fbx.meta
 guid: 3bfadaf413405aa4db391b91aefd0e82
+========
+guid: ef368702c8064884297401d2a85904da
+>>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Low poly Gems/Mesh/Stone2.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +11,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone3.fbx.meta
       name: Stone3
     second: {fileID: 2100000, guid: 033d7235973dd28499c93ce156b0021f, type: 2}
+========
+      name: Stone2
+    second: {fileID: 2100000, guid: 84e76693a4305464a96d36edccb36b9e, type: 2}
+>>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Low poly Gems/Mesh/Stone2.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
@@ -114,5 +123,9 @@ AssetOrigin:
   productId: 245515
   packageName: Low poly Gems
   packageVersion: 1.0
+<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone3.fbx.meta
   assetPath: Assets/Low poly Gems/Mesh/Stone3.fbx
+========
+  assetPath: Assets/Low poly Gems/Mesh/Stone2.fbx
+>>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Low poly Gems/Mesh/Stone2.fbx.meta
   uploadId: 558934
