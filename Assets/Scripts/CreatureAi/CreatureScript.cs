@@ -71,6 +71,7 @@ public class CreatureScript : MonoBehaviour
         currentState.OnEnterState();
 
         creatureInView = false;
+
     }
 
     private void OnEnable()
