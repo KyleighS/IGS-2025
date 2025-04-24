@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
 guid: 9cc54b48d51c05c4a9693000173c6c61
 ModelImporter:
   serializedVersion: 21300
@@ -10,13 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stone4
     second: {fileID: 2100000, guid: da8eb12041c5f66429cad23d0af7fb08, type: 2}
-========
-guid: 87576fffc5bcb7140b04ac254c559e33
-ModelImporter:
-  serializedVersion: 22200
-  internalIDToNameTable: []
-  externalObjects: {}
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
@@ -27,12 +19,10 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
     removeConstantScaleCurves: 1
-========
-    removeConstantScaleCurves: 0
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -55,10 +45,6 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
-========
-    importPhysicalCameras: 1
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -86,10 +72,6 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
-========
-    strictVertexDataChecks: 0
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -122,16 +104,11 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
-========
-  importBlendShapeDeformPercent: 1
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone4.fbx.meta
 AssetOrigin:
   serializedVersion: 1
   productId: 245515
@@ -139,5 +116,3 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Low poly Gems/Mesh/Stone4.fbx
   uploadId: 558934
-========
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/CryptidHouse_Model.fbx.meta

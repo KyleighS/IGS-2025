@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
 guid: 63c482a4bd859c04f8c7f436018dfeca
 ModelImporter:
   serializedVersion: 21300
@@ -10,13 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Stone5
     second: {fileID: 2100000, guid: 530773d3de6c9834fb2c1cbb09fe4d58, type: 2}
-========
-guid: 572d305c663d10740a61bcca9779174e
-ModelImporter:
-  serializedVersion: 22200
-  internalIDToNameTable: []
-  externalObjects: {}
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
   materials:
     materialImportMode: 2
     materialName: 0
@@ -27,12 +19,10 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
     removeConstantScaleCurves: 1
-========
-    removeConstantScaleCurves: 0
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -52,13 +42,9 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
-========
-    importPhysicalCameras: 1
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -86,10 +72,6 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
-========
-    strictVertexDataChecks: 0
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -122,16 +104,11 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
-========
-  importBlendShapeDeformPercent: 1
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<<< HEAD:Assets/Low poly Gems/Mesh/Stone5.fbx.meta
 AssetOrigin:
   serializedVersion: 1
   productId: 245515
@@ -139,5 +116,3 @@ AssetOrigin:
   packageVersion: 1.0
   assetPath: Assets/Low poly Gems/Mesh/Stone5.fbx
   uploadId: 558934
-========
->>>>>>>> 8bfbd939c976ab53b7a4165ebce1525707ddd94b:Assets/Scenes/Town Levels/TownModels/BarHouse_Model 1.fbx.meta
