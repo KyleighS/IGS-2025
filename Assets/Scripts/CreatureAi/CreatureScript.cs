@@ -7,6 +7,7 @@ public class CreatureScript : MonoBehaviour
     public GameManager gameManager;
     public string sceneName;
     public GameObject loseSceen;
+    public Animator animator;
     //The script in charge of controlling the navigation of this AI agent
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
     public bool creatureInView = false;
