@@ -12,11 +12,12 @@ public class ScreenShot : MonoBehaviour
     public EvidenceInView evidenceInView;
     public GameObject cursor;
     public AudioSource audioSource;
+    public CameraUI cameraUI;
 
     [Header("Photo")]
     public Image photoDisplayArea;
     public GameObject photoFrame;
-    public GameObject camUI;
+    public GameObject camOverlay;
     public GameObject interactUI;
     public Vector2 ogPos;
     public Vector3 ogScale;
@@ -44,7 +45,7 @@ public class ScreenShot : MonoBehaviour
     private void Update()
     {
         //checking if the camera ui is active and the player hits the right button
-        if(Input.GetMouseButtonDown(0) && camUI.activeSelf)
+        if(Input.GetMouseButtonDown(0) && camOverlay.activeSelf && cameraUI.canTakePic)
         {
             //makes sure a previous photo isnt still up
             if(!viewingPhoto)
@@ -67,13 +68,13 @@ public class ScreenShot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             photoAlbum.SetActive(!photoAlbum.activeSelf);
-            camUI.SetActive(false);
+            camOverlay.SetActive(false);
         }
     }
 
     IEnumerator TakePicture()
     {
-        camUI.SetActive(false);
+        camOverlay.SetActive(false);
         photoAlbum.SetActive(false);
         interactUI.SetActive(false); 
         cursor.SetActive(false);
@@ -103,7 +104,7 @@ public class ScreenShot : MonoBehaviour
 
         photoFrame.SetActive(true);
         fadingAnimation.Play("PhotoFadeIn");
-        camUI.SetActive(true);
+        camOverlay.SetActive(true);
         cursor.SetActive(true);
 
         StartCoroutine(FadePictureOUt());

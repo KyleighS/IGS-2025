@@ -12,6 +12,9 @@ public class CameraUI : MonoBehaviour
 {
     public GameObject camOverlay;
     public CameraModes cameraModes;
+    public bool canNightvision;
+    public bool canThermalVision;
+    public bool canTakePic;
 
     [Header("Record dot")]
     public Image dot;
@@ -38,6 +41,9 @@ public class CameraUI : MonoBehaviour
     {
         tempColor = dot.color;
         batteryCharge = fullBattery;
+        canNightvision = true;
+        canThermalVision = true;
+        canTakePic = true;
     }
 
     private void Update()
@@ -69,16 +75,20 @@ public class CameraUI : MonoBehaviour
         {
             decrease = true;
         }
-        //if (batteryCharge <= 0)
-        //{
-        //    camOverlay.SetActive(false);
-        //    bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
-        //    grain.active = !grain.active;
-        //}
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    ReloadBattery();
-        //}
+        if (batteryCharge <= 0)
+        {
+            camOverlay.SetActive(false);
+            bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
+            grain.active = !grain.active;
+
+            canNightvision = false;
+            canThermalVision = false;
+            canTakePic = false;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadBattery();
+        }
 
     }
 
@@ -114,6 +124,9 @@ public class CameraUI : MonoBehaviour
                 batteryCharge = fullBattery;
                 batterySlider.value = batteryCharge;
                 gameManager.inventory.Remove(gameManager.inventory[i]);
+                canNightvision = true;
+                canThermalVision = true;
+                canTakePic = true;
                 //Debug.Log("Player has battery");
             }
             else
@@ -127,6 +140,18 @@ public class CameraUI : MonoBehaviour
     public int GetBatteryCount()
     {
         int batteryCount = 0;
+        for (int i = 0; i < gameManager.inventory.Count; i++)
+        {
+            if (gameManager.inventory[i].gameObject.tag == "Battery")
+            {
+                batteryCount++;
+                //Debug.Log("Player has battery");
+            }
+            else
+            {
+                //Debug.Log("Player dosent have a battery");
+            }
+        }
 
         return batteryCount;
     }

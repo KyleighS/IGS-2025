@@ -33,7 +33,7 @@ public class CameraModes : MonoBehaviour
     void Update()
     {  
         //pulls the camera up if right click is pressed
-        if (camUI.batteryCharge != 0 && Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
             camcorderOverlay.SetActive(!camcorderOverlay.activeSelf);
 
@@ -50,13 +50,13 @@ public class CameraModes : MonoBehaviour
         }
 
         //activates nightvision if the camera is up and E is pressed
-        if (Input.GetKeyDown(KeyCode.E) && camcorderOverlay.activeSelf)
+        if (Input.GetKeyDown(KeyCode.E) && camcorderOverlay.activeSelf && camUI.canNightvision)
         {
             SetNightVision(!nightVisionState);
         }
 
         //activates thermal vision if the camera is up and F is pressed
-        if (Input.GetKeyDown(KeyCode.F) && camcorderOverlay.activeSelf)
+        if (Input.GetKeyDown(KeyCode.F) && camcorderOverlay.activeSelf && camUI.canThermalVision)
         {
             SetNightVision(false, thermalCam.activeSelf);
             thermalCam.SetActive(!thermalCam.activeSelf);
