@@ -37,6 +37,7 @@ public class IdleState : StateClass
         if (waitingTimeLeft <= 0)
         {
             ChangeState(creatureScript.roamingState, ref creatureScript.currentState);
+            //creatureScript.animator.SetBool("IsWalking", true);
         }
 
         //if (creatureScript.CheckIfPlayerVisible())
@@ -61,5 +62,6 @@ public class IdleState : StateClass
     public override void OnExitState()
     {
         //Debug.Log("Alright time to do something.");
+        creatureScript.animator.SetBool("IsWalking", true);
     }
 }

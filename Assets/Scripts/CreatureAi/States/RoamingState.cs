@@ -29,7 +29,7 @@ public class RoamingState : StateClass
         targetPos = creatureScript.transform.position + Random.insideUnitSphere * roamRange;
         //The enemyscript is told that their new destination is the targetPos
         creatureScript.navMeshAgent.SetDestination(targetPos);
-        creatureScript.animator.SetBool("IsWalking", true);
+        //creatureScript.animator.SetBool("IsWalking", true);
         //We refresh the target position so it matches the one calculated by the navmesh
         //targetPos = creatureScript.navMeshAgent.pathEndPosition;
         //
