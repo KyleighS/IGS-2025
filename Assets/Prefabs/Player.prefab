@@ -906,6 +906,8 @@ GameObject:
   - component: {fileID: 8250423417190677150}
   - component: {fileID: 1383576584932920744}
   - component: {fileID: 6461750333547568144}
+  - component: {fileID: 6858935519019342725}
+  - component: {fileID: 3024664835210380203}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1067,3 +1069,38 @@ MonoBehaviour:
   nightVisionState: 0
   camUI: {fileID: 0}
   questBar: {fileID: 0}
+--- !u!95 &6858935519019342725
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8885398893979103599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f83e32aa602449346af5aa3bc1f74fb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3024664835210380203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8885398893979103599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fd81049175f5245b21b899faa0fb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6858935519019342725}

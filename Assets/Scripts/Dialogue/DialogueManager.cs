@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.sentences)
         {
-            Debug.Log(sentence);
+            //Debug.Log(sentence);
             sentences.Enqueue(sentence);
         }
 
@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         spawnEvidence = true;
         inDialogue = false;
         dialogueBox.SetActive(false);
-        Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
     }
 }
 
