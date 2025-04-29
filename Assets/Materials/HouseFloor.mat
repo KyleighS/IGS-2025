@@ -29,7 +29,7 @@ Material:
     m_Floats:
     - _Metallic: 0
     - _QueueControl: 0
-    - _Smoothness: 0.382
+    - _Smoothness: 0.15
     - _tempreture: 49.26
     m_Colors:
     - _BaseColor: {r: 0.4188679, g: 0.34567237, b: 0.24894977, a: 1}
