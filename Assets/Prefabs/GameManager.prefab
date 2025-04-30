@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7509753046600806760}
   - component: {fileID: 8963265529720765474}
   - component: {fileID: 7314331979071556157}
+  - component: {fileID: 2195219100868102275}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -58,24 +59,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   creatureHidePoints:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   winOverlay: {fileID: 0}
-  allEvidence: 2
+  allEvidence: 4
   evidenceSlider: {fileID: 0}
   nextScene: Day3
 --- !u!114 &8963265529720765474
@@ -204,3 +191,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2195219100868102275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6409660779690442049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1592a27ec68cff94fab5810626e7de39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 0.3
+  startHour: 20
+  sunriseHour: 5
+  sunsetHour: 18
+  timeTxt: {fileID: 0}
+  warnningTxt: {fileID: 0}
+  endScreen: {fileID: 0}
+  pauseScript: {fileID: 0}
