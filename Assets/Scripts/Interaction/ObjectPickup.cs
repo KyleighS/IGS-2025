@@ -6,14 +6,8 @@ public class ObjectPickup : MonoBehaviour, IInteractable
 {
     public GameManager manager;
     public GameObject winOverlay;
-    public int allEvidence = 5;
     public Slider evidenceSlider;
 
-    public void Start()
-    {
-        evidenceSlider.maxValue = allEvidence;
-        evidenceSlider.value = 0;
-    }
 
     public string GetDescription()
     {
@@ -48,7 +42,7 @@ public class ObjectPickup : MonoBehaviour, IInteractable
                 hitInfo.collider.gameObject.SetActive(false);
                 //Destroy(hitInfo.collider.gameObject);
 
-                if (evidenceSlider.value >= allEvidence)
+                if (evidenceSlider.value >= manager.allEvidence)
                 {
                     winOverlay.SetActive(true);
                 }

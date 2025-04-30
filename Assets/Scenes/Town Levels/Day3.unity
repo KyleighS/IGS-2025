@@ -28133,6 +28133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2195219100868102275, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4365297835223167618, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
       propertyPath: timeTxt
       value: 
