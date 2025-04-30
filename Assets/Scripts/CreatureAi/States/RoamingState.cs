@@ -52,16 +52,19 @@ public class RoamingState : StateClass
         {
             if(creatureScript.sceneName == "Night 3")
             {
+                Debug.Log("Stalking");
                 ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
             }
             if(creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
             {
+                Debug.Log("Chasing");
                 ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
             }
         }
 
         if (creatureScript.creatureInView && creatureScript.sceneName == "Night 2" || creatureScript.sceneName == "Night 3")
         {
+            Debug.Log("Hiding");
             ChangeState(creatureScript.hideState, ref creatureScript.currentState);
         }
     }

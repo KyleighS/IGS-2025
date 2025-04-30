@@ -15,11 +15,12 @@ public class StalkingState : StateClass
     public override void OnEnterState()
     {
         Debug.Log("Creature following player");
+        creatureScript.animator.SetBool("IsWalking", true);
     }
 
     public override void OnExitState()
     {
-
+        creatureScript.animator.SetBool("IsWalking", false);
     }
 
     public override void ChangeState(StateClass newState, ref StateClass currentState)

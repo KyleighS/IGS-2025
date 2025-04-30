@@ -17,6 +17,7 @@ public class AttackState : StateClass
 
     public override void OnEnterState()
     {
+        creatureScript.animator.SetBool("IsAttacking", true);
         creatureScript.gameManager.evidenceSlider.value = 0;
         creatureScript.loseSceen.SetActive(true);
     }
@@ -33,7 +34,7 @@ public class AttackState : StateClass
 
     public override void OnExitState()
     {
-
+        creatureScript.animator.SetBool("IsAttacking", false);
     }
 
 }

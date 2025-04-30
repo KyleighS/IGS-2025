@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class CreatureScript : MonoBehaviour
 {
     public GameManager gameManager;
-    public string sceneName;
+    public string sceneName = "Night3";
     public GameObject loseSceen;
     public Animator animator;
     //The script in charge of controlling the navigation of this AI agent
@@ -55,7 +55,7 @@ public class CreatureScript : MonoBehaviour
     {
         //Get the navmeshagent in this game object
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        sceneName = SceneManager.GetActiveScene().name;
+        //sceneName = SceneManager.GetActiveScene().name;
         loseSceen.SetActive(false);
 
         idleState = new IdleState(this);

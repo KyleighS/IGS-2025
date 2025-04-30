@@ -27,6 +27,7 @@ public class ChaseState : StateClass
 
     public override void OnEnterState()
     {
+        creatureScript.animator.SetBool("IsRunning", true);
     }
 
     public override void OnEveryFrame()
@@ -65,7 +66,7 @@ public class ChaseState : StateClass
 
     public override void OnExitState()
     {
-
+        creatureScript.animator.SetBool("IsRunning", false);
     }
 
     public void OnTriggerEnter(Collider other)

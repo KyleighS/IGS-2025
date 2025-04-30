@@ -21,6 +21,8 @@ public class HideState : StateClass
         Debug.Log("Creature has been seen");
         targetPos = creatureScript.FindHidingPoint();
         creatureScript.navMeshAgent.SetDestination(targetPos);
+        creatureScript.navMeshAgent.speed = 5;
+        creatureScript.animator.SetBool("IsRunning", true);
     }
 
     public override void OnEveryFrame()
@@ -45,6 +47,6 @@ public class HideState : StateClass
 
     public override void OnExitState()
     {
-
+        creatureScript.animator.SetBool("IsRunning", false);
     }
 }

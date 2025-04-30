@@ -31,6 +31,7 @@ public class SearchingState : StateClass
         creatureScript.navMeshAgent.SetDestination(targetPos);
         //We refresh the target position so it matches the one calculated by the navmesh
         targetPos = creatureScript.navMeshAgent.pathEndPosition;
+        creatureScript.animator.SetBool("IsWalking", true);
         //
         //Debug.Log("Moving to " + targetPos.ToString());
     }
@@ -62,6 +63,7 @@ public class SearchingState : StateClass
 
     public override void OnExitState()
     {
+        creatureScript.animator.SetBool("IsWalking", false);
         //Debug.Log("Leaving patrol state");
     }
 }

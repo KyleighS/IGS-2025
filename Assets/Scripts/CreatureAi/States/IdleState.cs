@@ -45,11 +45,11 @@ public class IdleState : StateClass
         //    ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
         //}
 
-        if (creatureScript.CheckIfPlayerVisible())
-        {
-            Debug.Log("Player is visable(I)");
-            ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
-        }
+        //if (creatureScript.CheckIfPlayerVisible())
+        //{
+        //    Debug.Log("Player is visable(I)");
+        //    ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
+        //}
     }
 
     //This state does nothing on every fixed frame
