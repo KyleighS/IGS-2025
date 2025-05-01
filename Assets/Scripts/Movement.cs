@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
+        playingAnim = true;
         if (sound != null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -29,30 +30,31 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
+    { 
 
-        Vector3 move = transform.right * x + transform.forward * z;
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
 
-        //sprint if holding left shift
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            curSpeed = baseSpeed * sprintSpeed;
-        }
-        else
-        {
-            curSpeed = baseSpeed;
-        }
+            Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * curSpeed * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+            //sprint if holding left shift
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                curSpeed = baseSpeed * sprintSpeed;
+            }
+            else
+            {
+                curSpeed = baseSpeed;
+            }
 
-        if(move.magnitude != 0 && !audioSource.isPlaying)
-        {
-            PlaySound();
-        }
+            controller.Move(move * curSpeed * Time.deltaTime);
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+
+            if (move.magnitude != 0 && !audioSource.isPlaying)
+            {
+                PlaySound();
+            }
     }
 
     public virtual void PlaySound()
@@ -60,5 +62,11 @@ public class Movement : MonoBehaviour
         newSound = new SoundClass(audioSource, sound.clip, sound.range, this.transform.position);
         newSound.Play();
 
+    }
+
+    public bool setAnim()
+    {
+        playingAnim = false;
+        return playingAnim;
     }
 }

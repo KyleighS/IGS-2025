@@ -7,29 +7,31 @@ public class CameraMove : MonoBehaviour
     private float xRotation = 0f;
     public float sensitivity = 100f;
     public Transform player;
+    public bool playingAnim;
 
     void Start()
     {
         //locks cursor to center of screen and hides it
         Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    private void Update()
-    {
-        //Debug.Log("FPS: " + 1.0f / Time.deltaTime);
+        playingAnim = true;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+            mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        player.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            player.Rotate(Vector3.up * mouseX);
 
+    }
+    public bool setAnim()
+    {
+        playingAnim = false;
+        return playingAnim;
     }
 }
