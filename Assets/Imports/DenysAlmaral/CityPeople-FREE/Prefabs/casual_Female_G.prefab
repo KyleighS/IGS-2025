@@ -878,7 +878,7 @@ Animator:
   m_GameObject: {fileID: 6584613354768528393}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: efa7cf83928a3bd42935d7898c6fe1df, type: 3}
-  m_Controller: {fileID: 9100000, guid: afe9de63454bbd448a9886ad5a285ae7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4b8c61a9f0c72974f96522827b9432aa, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -940,10 +940,10 @@ MonoBehaviour:
   dialogue:
     name: Sarah
     sentences:
-    - 'Hi Im Sarah, I run this store. '
+    - 'Hi Im Sarah, I run this bar. '
     - 'Your pretty brave for staying in that cabin alone. People have reported trees
       randomly getting cut down at night. '
-    - 'Last I heard there were about three. '
+    - Apparently thers a whole field of then torward the north west.
     - 'Stay safe out there and buh bye now. '
   spawnEvidence: 0
 --- !u!1 &6646269780412227657

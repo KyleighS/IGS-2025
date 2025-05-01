@@ -136,7 +136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2100208028559941110}
   - component: {fileID: 5459872135671498636}
-  - component: {fileID: 1058556038379161208}
   - component: {fileID: 5187561018412613522}
   - component: {fileID: 3448590998315683315}
   m_Layer: 0
@@ -173,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 1616406060653692748}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 50c8fe73844fb0a42bdb72b9873224e6, type: 3}
-  m_Controller: {fileID: 9100000, guid: 62283de8ca021c34aa5e61353fb9a6f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: ba9f9292b2d7a6a4a8bccec18e87bab2, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -185,20 +184,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1058556038379161208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616406060653692748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54f141628068b9b4493f69f797f003b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoPlayAnimations: 0
-  PaletteOverride: {fileID: 0}
 --- !u!114 &5187561018412613522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,8 +225,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9671173, y: 1.8712273, z: 0.54519653}
-  m_Center: {x: 0.016441345, y: 0.90684307, z: -0.008224487}
+  m_Size: {x: 0.9671173, y: 1.8712273, z: 1.7817383}
+  m_Center: {x: 0.016441345, y: 0.90684307, z: 0.6100464}
 --- !u!1 &1719302345640664642
 GameObject:
   m_ObjectHideFlags: 0
