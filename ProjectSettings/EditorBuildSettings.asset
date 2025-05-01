@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 54089b7b370ddab48ad8151723a0c53f
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3e6810effefa0424a9d122a506ec82ec
+  - enabled: 1
     path: Assets/Scenes/Town Levels/Day1.unity
     guid: 938b4f939a269aa4bbd27f8cdca415eb
   - enabled: 1
