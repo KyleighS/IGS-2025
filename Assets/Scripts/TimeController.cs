@@ -20,6 +20,7 @@ public class TimeController : MonoBehaviour
     public DateTime curTime;
     public GameObject warnningTxt;
     public GameObject endScreen;
+    public GameObject winScreen;
     public PauseMenu pauseScript;
 
 
@@ -54,11 +55,13 @@ public class TimeController : MonoBehaviour
         if (curTime.Hour == sunriseHour - 2)
         {
             warnningTxt.SetActive(true);
+            winScreen.SetActive(false);
         }
 
         if(curTime.Hour == sunriseHour)
         {
             warnningTxt.SetActive(false);
+            winScreen.SetActive(false);
             endScreen.SetActive(true);
             pauseTimer = true;
             Cursor.lockState = CursorLockMode.None;

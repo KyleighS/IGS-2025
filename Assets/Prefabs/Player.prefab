@@ -678,7 +678,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1037,6 +1037,7 @@ MonoBehaviour:
   nightVisionState: 0
   camUI: {fileID: 0}
   questBar: {fileID: 0}
+  timerTxt: {fileID: 0}
 --- !u!95 &6858935519019342725
 Animator:
   serializedVersion: 7

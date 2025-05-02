@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int allEvidence;
     public Slider evidenceSlider;
     public string nextScene;
+    public TimeController timeController;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
                 if (evidenceSlider.value == allEvidence)
                 {
                     winOverlay.SetActive(true);
+                    timeController.warnningTxt.SetActive(false);
                 }
 
                 evidenceSlider.value++;

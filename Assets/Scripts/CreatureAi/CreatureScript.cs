@@ -225,6 +225,9 @@ public class CreatureScript : MonoBehaviour
                 animator.SetBool("IsAttacking", true);
                 gameManager.evidenceSlider.value = 0;
                 loseSceen.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
             }
         }
     }
