@@ -13,8 +13,10 @@ public class ScreenShot : MonoBehaviour
     public GameObject cursor;
     public AudioSource audioSource;
     public CameraUI cameraUI;
-
+    
     [Header("Photo")]
+    public int photoEvidence;
+    public int shotsLeft = 9;
     public Image photoDisplayArea;
     public GameObject photoFrame;
     public GameObject camOverlay;
@@ -48,15 +50,19 @@ public class ScreenShot : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && camOverlay.activeSelf && cameraUI.canTakePic)
         {
             //makes sure a previous photo isnt still up
-            if(!viewingPhoto)
+            if(!viewingPhoto && shotsLeft != 0)
             {
                 //calls the TakePhoto function
                 StartCoroutine(TakePicture());
                 audioSource.Play();
                 if (evidenceInView.evidenceOnScreen || creatureScript.creatureInView)
                 {
-                    gameManager.evidenceSlider.value++;
-
+                    if(photoEvidence != 0)
+                    {
+                        gameManager.evidenceSlider.value++;
+                        photoEvidence--;
+                    }
+                   
                     if (gameManager.evidenceSlider.value == gameManager.allEvidence)
                     {
                         gameManager.winOverlay.SetActive(true);
@@ -74,6 +80,7 @@ public class ScreenShot : MonoBehaviour
 
     IEnumerator TakePicture()
     {
+        shotsLeft--;
         camOverlay.SetActive(false);
         photoAlbum.SetActive(false);
         interactUI.SetActive(false); 

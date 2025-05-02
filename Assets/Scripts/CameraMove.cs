@@ -7,13 +7,11 @@ public class CameraMove : MonoBehaviour
     private float xRotation = 0f;
     public float sensitivity = 100f;
     public Transform player;
-    public bool playingAnim;
 
     void Start()
     {
         //locks cursor to center of screen and hides it
         Cursor.lockState = CursorLockMode.Locked;
-        playingAnim = true;
     }
 
     // Update is called once per frame
@@ -28,10 +26,5 @@ public class CameraMove : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             player.Rotate(Vector3.up * mouseX);
 
-    }
-    public bool setAnim()
-    {
-        playingAnim = false;
-        return playingAnim;
     }
 }

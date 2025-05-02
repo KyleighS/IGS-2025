@@ -10,7 +10,6 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueTxt;
     public GameObject dialogueBox;
     public bool inDialogue = false;
-    public bool spawnEvidence;
     public Movement playerMovement;
     public CameraMove cameraMove;
 
@@ -67,7 +66,6 @@ public class DialogueManager : MonoBehaviour
     {
         playerMovement.GetComponent<Movement>().enabled = true;
         cameraMove.GetComponent<CameraMove>().enabled = true;
-        spawnEvidence = true;
         inDialogue = false;
         dialogueBox.SetActive(false);
         //Debug.Log("End of conversation.");

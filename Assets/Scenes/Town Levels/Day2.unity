@@ -5102,7 +5102,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: c220f0580a666f442a1653263dc85fe1, type: 2}
     - target: {fileID: 2369712856593308033, guid: 730000931cae1454c8083362445e8f75, type: 3}
       propertyPath: m_Name
-      value: NPC_Alez
+      value: NPC_Alex
       objectReference: {fileID: 0}
     - target: {fileID: 2369712856593335393, guid: 730000931cae1454c8083362445e8f75, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5144,11 +5144,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6547648222984425520, guid: 730000931cae1454c8083362445e8f75, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 182635305}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 730000931cae1454c8083362445e8f75, type: 3}
+--- !u!65 &182635305 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3200717067519275812, guid: 730000931cae1454c8083362445e8f75, type: 3}
+  m_PrefabInstance: {fileID: 182635304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183193361
 GameObject:
   m_ObjectHideFlags: 0
@@ -56337,6 +56346,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 1990781629}
+    - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -56362,62 +56375,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 186757882122740016, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1990781630}
-    - targetCorrespondingSourceObject: {fileID: 186757882122740016, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1990781631}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
---- !u!1 &1990781629 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 186757882122740016, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+--- !u!65 &1990781629 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 655505291608587413, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
   m_PrefabInstance: {fileID: 1990781628}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1990781630
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990781629}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.7064358, z: 0.6302127}
-  m_Center: {x: -2.2364555e-11, y: 0.83847994, z: -0.008205369}
---- !u!114 &1990781631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990781629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8976f75390c098043b5010c0920c44dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Ruth
-    sentences:
-    - 'Hello dear, oh you must be the one everyone talking about. '
-    - 'Your hear to hunt that so called monster in the forest. '
-    - 'Dont get your hopes up too high. I''ve lived here my whole life and never
-      seen anything. '
-    - 'Even if there is something out there it seems to be minding its business so
-      why go bother it. '
-  spawnEvidence: 0
 --- !u!1001 &1993541167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60457,6 +60421,7 @@ SceneRoots:
   - {fileID: 2063858862}
   - {fileID: 1728637473}
   - {fileID: 1990781628}
+  - {fileID: 182635304}
   - {fileID: 1657347216}
   - {fileID: 341266110}
   - {fileID: 564677156}
@@ -60515,4 +60480,3 @@ SceneRoots:
   - {fileID: 1942808821}
   - {fileID: 736323883}
   - {fileID: 648926014}
-  - {fileID: 182635304}

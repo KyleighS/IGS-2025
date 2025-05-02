@@ -8488,6 +8488,10 @@ PrefabInstance:
       value: NPC_Emmett
       objectReference: {fileID: 0}
     - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 949501250}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -11681,6 +11685,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 07c4e98ceb4490c4abafb0bfb61d361f, type: 3}
   m_PrefabInstance: {fileID: 337347701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &339142256 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3448590998315683315, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+  m_PrefabInstance: {fileID: 1730504551}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &339618490 stripped
 GameObject:
@@ -28714,6 +28723,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fed4f9611302fcf4eb2a42188bffcf65, type: 3}
   m_PrefabInstance: {fileID: 948116872}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &949501250 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 632216945278310910, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+  m_PrefabInstance: {fileID: 237808166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &950402058
 GameObject:
   m_ObjectHideFlags: 0
@@ -29163,6 +29177,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &960343242 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2534348020502595840, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+  m_PrefabInstance: {fileID: 1236461319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &961314063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36731,6 +36750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 960343242}
     - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 6
@@ -51588,6 +51611,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 339142256}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[0]'
       value: Hey there! You must be new around here.
       objectReference: {fileID: 0}
@@ -54901,6 +54928,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832780046}
   m_CullTransparentMesh: 1
+--- !u!114 &1834473247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2195219100868102275, guid: 708a7c3de3ee51549a60341447a16056, type: 3}
+  m_PrefabInstance: {fileID: 1515928328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1592a27ec68cff94fab5810626e7de39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1837354296
 GameObject:
   m_ObjectHideFlags: 0
@@ -55385,7 +55423,7 @@ MonoBehaviour:
   mainMenu: Night1
   pauseMenu: {fileID: 1049530545}
   isPaused: 0
-  timeController: {fileID: 0}
+  timeController: {fileID: 1834473247}
 --- !u!114 &1845728227
 MonoBehaviour:
   m_ObjectHideFlags: 0

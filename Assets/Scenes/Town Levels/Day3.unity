@@ -631,6 +631,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 12330576}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[0]'
       value: 'Hey, welcome to my Cryptid shop.  '
       objectReference: {fileID: 0}
@@ -659,64 +663,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 913845681951795218, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 12330578}
-    - targetCorrespondingSourceObject: {fileID: 913845681951795218, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 12330577}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
---- !u!1 &12330576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 913845681951795218, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+--- !u!65 &12330576 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 226132337425650292, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
   m_PrefabInstance: {fileID: 12330575}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &12330577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12330576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8976f75390c098043b5010c0920c44dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Phil
-    sentences:
-    - 'Hello welcome to my Cryptid shop. '
-    - 'If your stopping in you must be a fan of cryptids. Or your here to investigate
-      the one in our forest. '
-    - 'Its called the Malevaak essentiallly its a walking boulder with one glowing
-      gem for an eye. '
-    - 'You know I saw it once, not that anyone here believes me though. '
-    - 'Hey maybe if you could get a picture of it they would stop calling me crazy. '
-    - You think you could do that for me?
-  spawnEvidence: 0
---- !u!65 &12330578
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12330576}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7562496, y: 1.7735528, z: 2}
-  m_Center: {x: 0.023433233, y: 0.8743473, z: 0.3072692}
 --- !u!1001 &20981616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9938,6 +9891,10 @@ PrefabInstance:
       value: 0.44153214
       objectReference: {fileID: 0}
     - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 302891707}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[0]'
       value: 'Heh, Mr. Phil is so cool. He always has cool stories to tell with crazy
         monsters. '
@@ -10511,14 +10468,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5986958801767457440, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1521133040}
-    - targetCorrespondingSourceObject: {fileID: 5986958801767457440, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1521133039}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+--- !u!65 &302891707 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6902152292697033453, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+  m_PrefabInstance: {fileID: 302891706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &303064801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43900,54 +43856,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 914921404c9349d4c8927bea27d59b18, type: 3}
   m_PrefabInstance: {fileID: 1520599613}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1521133035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5986958801767457440, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
-  m_PrefabInstance: {fileID: 302891706}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1521133039
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521133035}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6464111, y: 1.1312306, z: 0.56447756}
-  m_Center: {x: 0.020050049, y: 0.5504385, z: 0.023596192}
---- !u!114 &1521133040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521133035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8976f75390c098043b5010c0920c44dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Timmy
-    sentences:
-    - 'Mr. Phil is so cool. He alwasy has these stories to tell with the craziest
-      monsters. '
-    - 'Hes even said their one in the forest nearby and that hes seen it. '
-    - 'My mom dosent want me going out there, but once I snuck out and found this. '
-    - ~He pulls out a small glowing gem fragment~
-    - 'It was near this weird rock statue that looked half destroyed. '
-  spawnEvidence: 0
 --- !u!1001 &1532553316
 PrefabInstance:
   m_ObjectHideFlags: 0

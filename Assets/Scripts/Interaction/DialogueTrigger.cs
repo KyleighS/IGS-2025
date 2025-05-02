@@ -4,12 +4,7 @@ using UnityEngine.Rendering;
 public class DialogueTrigger : MonoBehaviour, IInteractable
 {
     public Dialogue dialogue;
-    public bool spawnEvidence;
-
-    public void Start()
-    {
-        spawnEvidence = false;
-    }
+    public Collider boxCollider;
 
     public string GetDescription()
     {
@@ -19,6 +14,6 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public void Interact()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        spawnEvidence = true;
+        boxCollider.enabled = false;
     }
 }

@@ -17,11 +17,9 @@ public class Movement : MonoBehaviour
     public float sprintSpeed = 2f;
 
     public Vector3 velocity;
-    private bool playingAnim;
 
     private void Awake()
     {
-        playingAnim = true;
         if (sound != null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -64,9 +62,5 @@ public class Movement : MonoBehaviour
 
     }
 
-    public bool setAnim()
-    {
-        playingAnim = false;
-        return playingAnim;
-    }
+
 }
