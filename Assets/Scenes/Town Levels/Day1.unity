@@ -8192,6 +8192,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Emmett
       objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Hey you, you're living in the cabin right? The name's Emmett.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: I've been hearing a lot of stories from Phil recently about some monster
+        in the woods.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: I personally don't really believe him, but he has piqued my interest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[3]'
+      value: Since you're living in the cabin, I was hoping you could take a look
+        around. You can even borrow my camera.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[4]'
+      value: I lost the storage card, so it can only  take nine pictures before it
+        needs to be unloaded. Be careful to use them wisely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[5]'
+      value: 'To open the camera press left-click, and to take a picture press right-click. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[6]'
+      value: It also comes with night vision (E) and thermal vision (F), perfect
+        for hunting monsters.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[7]'
+      value: If you can bring me proof of the monster's, I'll even let you keep the
+        camera.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[8]'
+      value: 'Have fun out there! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846060261109428937, guid: 4f339f6ad8704954aac9c2363443a600, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[9]'
+      value: You can take my camera, and if you can give me proof of this monster,
+        you can keep it.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34803,6 +34853,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Hello there. You can call me Sarah. I run this bar.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: 'You''re the one staying in the cabin? That''s pretty brave considering
+        all the rumors going around. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: 'People have been reporting hearing strange sounds, finding trees snapped
+        like twigs, and the sound of grinding stones. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[3]'
+      value: Apparently there's a whole field of those trees near trail 4.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[4]'
+      value: Make sure to stay safe out there, don't want my customer's getting lost.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3978506295303377927, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[5]'
+      value: See ya around!
+      objectReference: {fileID: 0}
     - target: {fileID: 5776691538091650739, guid: bae26acf817c6dc4e82f95d9ef4ab46a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 151.91022
@@ -49103,6 +49183,28 @@ PrefabInstance:
     - target: {fileID: 2100208028559941110, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Hey there! You must be new around here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: The name's Joseph.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: I assume you're here cause of the rumors about the creature in the forest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[3]'
+      value: 'If you ask me, it''s just a big conspiracy. I''ve walked through every
+        inch of that forest and never seen any monsters. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187561018412613522, guid: f71041fd118fbb34aa9d2dd6a1d96fce, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[4]'
+      value: Although... about a week ago I saw something strange on the north side
+        of the cabin. Probably just some wildlife though.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -610,6 +610,32 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: 'Hey, welcome to my Cryptid shop.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: 'If your stopping in you must be a fan of cryptids, or you''re here
+        to investigate our local monster. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: 'I saw it, you know. Its called the Malevaak. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[3]'
+      value: It looks like a mass of boulders, with a single piercing purple eye.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[4]'
+      value: Hey maybe if you could get a picture of it the townsfolk might stop
+        calling me crazy!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442071291027704075, guid: 2435736d6adca23458edd7c80c901e3e, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[5]'
+      value: 'Do you think you could do that for me? I would really appreciate it! '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9399,6 +9425,29 @@ PrefabInstance:
     - target: {fileID: 3546981013731279015, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.44153214
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: 'Heh, Mr. Phil is so cool. He always has cool stories to tell with crazy
+        monsters. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: He even saw a real monster! In the forest nearby!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: My mom doesn't want me going out there. Don't tell her, but after I
+        heard his story I snuck out and found this!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[3]'
+      value: ~He pulls out a small glowing fragment of a purple gem~
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984747046791924399, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[4]'
+      value: It was near this weird half destroyed rock statue. I bet Mr. Phil would
+        pay for a picture of it, but mom won't get me a camera.
       objectReference: {fileID: 0}
     - target: {fileID: 4001989912711603358, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
       propertyPath: m_LocalPosition.y

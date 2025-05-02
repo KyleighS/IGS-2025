@@ -53532,6 +53532,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: Hello Dear, you must be the one everyone is talking about. The monster
+        hunter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: Don't get your hopes up too high, I have lived here for forty years
+        and never seen any monster.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237158874123766070, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: Whatever is making those sounds doesn't cause trouble for me, so why
+        should I care what it is. No reason to bother other people if you ask me.
+      objectReference: {fileID: 0}
     - target: {fileID: 6964253449126897533, guid: bcc8732b8b44622449c23934f89e68c0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -53846,13 +53865,14 @@ MonoBehaviour:
   dialogue:
     name: Officer Alyssa
     sentences:
-    - 'Hey there kid. You better be keeping the cabin in good shape. '
-    - Also you best be keeping yourself safe out there. I know you there to find
-      the creature, and I don't wanna have to come looking for you.
-    - 'Yes I bevieve in the creature. I live close to the forest and can hear what
-      sounds like stones grinding together some nights. '
-    - 'You wanna find some things about it, look for the cave North West of the cabin,
-      i think thats were it lives. '
+    - Hey there! You're taking good care of my cabin, right? I heard some loud noises
+      coming from that direction last night.
+    - You're not doing anything to dangerous? I know you want to find that monster,
+      but I don't want to have to go out looking for you.
+    - 'I''m not sure the creature really exists, but it''s hard to deny the evidence.
+      The broken trees, that horrible sound of rocks grinding together. '
+    - Sometimes I wake up in the middle of the night and see something moving out
+      there. It seems to head towards the cave North West of your cabin.
   spawnEvidence: 0
 --- !u!65 &2001957217
 BoxCollider:
