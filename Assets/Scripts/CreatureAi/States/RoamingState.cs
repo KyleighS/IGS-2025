@@ -29,6 +29,7 @@ public class RoamingState : StateClass
         targetPos = creatureScript.transform.position + Random.insideUnitSphere * roamRange;
         //The enemyscript is told that their new destination is the targetPos
         creatureScript.navMeshAgent.SetDestination(targetPos);
+        creatureScript.audioSource.Play();
         //creatureScript.animator.SetBool("IsWalking", true);
         //We refresh the target position so it matches the one calculated by the navmesh
         //targetPos = creatureScript.navMeshAgent.pathEndPosition;
@@ -55,7 +56,7 @@ public class RoamingState : StateClass
                 Debug.Log("Stalking");
                 ChangeState(creatureScript.stalkState, ref creatureScript.currentState);
             }
-            if(creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
+            if(creatureScript.sceneName == "Night 4")
             {
                 Debug.Log("Chasing");
                 ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
@@ -87,8 +88,6 @@ public class RoamingState : StateClass
             {
                 ChangeState(creatureScript.attackState, ref creatureScript.currentState);
             }
-
         }
-
     }
 }

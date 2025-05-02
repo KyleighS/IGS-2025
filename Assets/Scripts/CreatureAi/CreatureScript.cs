@@ -8,6 +8,7 @@ public class CreatureScript : MonoBehaviour
     public string sceneName;
     public GameObject loseSceen;
     public Animator animator;
+    public AudioSource audioSource;
     //The script in charge of controlling the navigation of this AI agent
     public UnityEngine.AI.NavMeshAgent navMeshAgent;
     public bool creatureInView = false;
@@ -110,9 +111,9 @@ public class CreatureScript : MonoBehaviour
     /// <param name="col"></param>
     public void TargetIfPlayer(Collider col)
     {
-        if (col.gameObject.CompareTag(playerTag))
+        if (col.gameObject.CompareTag(playerTag) && sceneName == "Night4")
         {
-            //Debug.Log("Player is in awareness");
+            
         }
     }
 
@@ -214,4 +215,18 @@ public class CreatureScript : MonoBehaviour
         }
         return closetPoint;
     }
+    public void OnCollisionEnter(Collision other)
+    {
+        Debug.Log(other.gameObject.name);
+        if (sceneName == "Night4")
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                animator.SetBool("IsAttacking", true);
+                gameManager.evidenceSlider.value = 0;
+                loseSceen.SetActive(true);
+            }
+        }
+    }
+
 }

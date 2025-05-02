@@ -69,15 +69,4 @@ public class ChaseState : StateClass
         creatureScript.animator.SetBool("IsRunning", false);
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
-        {
-            if (other.tag == "Player")
-            {
-                ChangeState(creatureScript.attackState, ref creatureScript.currentState);
-            }
-
-        }
-    }
 }
