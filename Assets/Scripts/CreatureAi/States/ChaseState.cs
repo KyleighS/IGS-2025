@@ -28,6 +28,7 @@ public class ChaseState : StateClass
     public override void OnEnterState()
     {
         creatureScript.animator.SetBool("IsRunning", true);
+        creatureScript.audioSource.Play();
     }
 
     public override void OnEveryFrame()
@@ -67,6 +68,7 @@ public class ChaseState : StateClass
     public override void OnExitState()
     {
         creatureScript.animator.SetBool("IsRunning", false);
+        creatureScript.audioSource.Stop();
     }
 
 }

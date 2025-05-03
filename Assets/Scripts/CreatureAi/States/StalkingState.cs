@@ -16,11 +16,13 @@ public class StalkingState : StateClass
     {
         Debug.Log("Creature following player");
         creatureScript.animator.SetBool("IsWalking", true);
+        creatureScript.audioSource.Play();
     }
 
     public override void OnExitState()
     {
         creatureScript.animator.SetBool("IsWalking", false);
+        creatureScript.audioSource.Stop();
     }
 
     public override void ChangeState(StateClass newState, ref StateClass currentState)

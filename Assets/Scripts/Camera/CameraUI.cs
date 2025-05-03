@@ -78,6 +78,7 @@ public class CameraUI : MonoBehaviour
         if (batteryCharge <= 0)
         {
             camOverlay.SetActive(false);
+            cameraModes.questBar.SetActive(true);
             bool volumeGrain = cameraModes.volume.profile.TryGet(out FilmGrain grain);
             grain.active = !grain.active;
 

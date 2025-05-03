@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,7 @@ public class ScreenShot : MonoBehaviour
     private Texture2D screenCapture;
     private bool viewingPhoto;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,8 +48,9 @@ public class ScreenShot : MonoBehaviour
 
     private void Update()
     {
+
         //checking if the camera ui is active and the player hits the right button
-        if(Input.GetMouseButtonDown(0) && camOverlay.activeSelf && cameraUI.canTakePic)
+        if (Input.GetMouseButtonDown(0) && camOverlay.activeSelf && cameraUI.canTakePic)
         {
             //makes sure a previous photo isnt still up
             if(!viewingPhoto && shotsLeft != 0)
@@ -59,7 +62,9 @@ public class ScreenShot : MonoBehaviour
                 {
                     if(photoEvidence != 0)
                     {
-                        gameManager.evidenceSlider.value++;
+                        gameManager.picutresTaken++;
+                        gameManager.updateLerp();
+                        //Debug.Log("Picture Taken: " + gameManager.endLerp);
                         photoEvidence--;
                     }
                    
@@ -102,6 +107,7 @@ public class ScreenShot : MonoBehaviour
 
     public void DisplayPhoto()
     {
+        if (gameManager.winOverlay.active) { return; }
         Sprite photoSprite = Sprite.Create(screenCapture, 
             new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), 
             new Vector2(0.5f, 0.5f), 100.0f);
@@ -126,7 +132,7 @@ public class ScreenShot : MonoBehaviour
     IEnumerator FadePictureOUt()
     {
         //waits for 2 second before starting the animation to move the piture off the screen 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         MovingPhoto.Play("MoveandShrink");
         StartCoroutine(RemovePhoto());
     }
@@ -134,7 +140,7 @@ public class ScreenShot : MonoBehaviour
     IEnumerator RemovePhoto()
     {
         //waits for the previous animation to finish then deactiviates the photo UI
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(2);
         viewingPhoto = false;
         photoFrame.SetActive(false);
 

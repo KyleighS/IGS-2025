@@ -35,6 +35,7 @@ public class AttackState : StateClass
     public override void OnExitState()
     {
         creatureScript.animator.SetBool("IsAttacking", false);
+        creatureScript.audioSource.Stop();
     }
 
 }

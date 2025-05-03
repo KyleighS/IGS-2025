@@ -32,6 +32,7 @@ public class SearchingState : StateClass
         //We refresh the target position so it matches the one calculated by the navmesh
         targetPos = creatureScript.navMeshAgent.pathEndPosition;
         creatureScript.animator.SetBool("IsWalking", true);
+        creatureScript.audioSource.Play();
         //
         //Debug.Log("Moving to " + targetPos.ToString());
     }
@@ -49,7 +50,7 @@ public class SearchingState : StateClass
 
         if (creatureScript.CheckIfPlayerVisible())
         {
-            if (creatureScript.sceneName == "Night 4" || creatureScript.sceneName == "Night 5")
+            if (creatureScript.sceneName == "Night 4")
             {
                 ChangeState(creatureScript.chaseState, ref creatureScript.currentState);
             }
@@ -64,6 +65,7 @@ public class SearchingState : StateClass
     public override void OnExitState()
     {
         creatureScript.animator.SetBool("IsWalking", false);
+        creatureScript.audioSource.Stop();
         //Debug.Log("Leaving patrol state");
     }
 }

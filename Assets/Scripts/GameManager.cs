@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
     public TimeController timeController;
 
 
-    public float lerpSpeed;
+    private float lerpSpeed = 0.7f;
     private float lerp = 0;
     private float startLerp = 0;
-    private float endLerp = 0;
+    public float endLerp = 0;
+    public int picutresTaken = 0;
 
     private void Start()
     {
@@ -36,9 +37,10 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         lerp += lerpSpeed * Time.deltaTime;
+        //Debug.Log("Preclamp: " + lerp);
         lerp = Mathf.Clamp(lerp, 0, endLerp);
         evidenceSlider.value = lerp;
-        Debug.Log(lerp);
+        //Debug.Log(lerp);
 
     }
 
@@ -48,25 +50,32 @@ public class GameManager : MonoBehaviour
         {
             if (inventory[i].gameObject.tag == "Evidence")
             {
-                endLerp = inventory.Count;
-                if (endLerp == allEvidence)
-                {
-                    winOverlay.SetActive(true);
-                    timeController.warnningTxt.SetActive(false);
-                    camOverlay.SetActive(false);
-                    if(SceneManager.GetActiveScene().name == "Night4")
-                    {
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
-                        Time.timeScale = 0f;
-                    }
-  
-                }
+                updateLerp();
             }
 
         }
     }
 
+    public float updateLerp()
+    {
+        endLerp = inventory.Count + picutresTaken;
+        
+        if (endLerp == allEvidence)
+        {
+            winOverlay.SetActive(true);
+            timeController.warnningTxt.SetActive(false);
+            camOverlay.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "Night4")
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+                timeController.warnningTxt.SetActive(false);
+                camOverlay.SetActive(false);
 
+            }
+        }
+        return endLerp;
+    }
 }
 

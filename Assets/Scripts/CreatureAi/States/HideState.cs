@@ -23,6 +23,7 @@ public class HideState : StateClass
         creatureScript.navMeshAgent.SetDestination(targetPos);
         creatureScript.navMeshAgent.speed = 7;
         creatureScript.animator.SetBool("IsRunning", true);
+        creatureScript.audioSource.Play();
     }
 
     public override void OnEveryFrame()
@@ -48,5 +49,6 @@ public class HideState : StateClass
     public override void OnExitState()
     {
         creatureScript.animator.SetBool("IsRunning", false);
+        creatureScript.audioSource.Stop();
     }
 }
