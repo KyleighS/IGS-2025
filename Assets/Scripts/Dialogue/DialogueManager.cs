@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public bool inDialogue = false;
     public Movement playerMovement;
     public CameraMove cameraMove;
+    public Animator playerAnimator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +24,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (inDialogue)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 if (sentences.Count > 0)
                 {
@@ -43,6 +44,8 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
         playerMovement.GetComponent<Movement>().enabled = false;
         cameraMove.GetComponent<CameraMove>().enabled = false;
+        playerAnimator.GetComponent<Animator>().enabled = false;
+
 
         foreach (string sentence in dialogue.sentences)
         {
@@ -66,6 +69,7 @@ public class DialogueManager : MonoBehaviour
     {
         playerMovement.GetComponent<Movement>().enabled = true;
         cameraMove.GetComponent<CameraMove>().enabled = true;
+        playerAnimator.GetComponent<Animator>().enabled = true;
         inDialogue = false;
         dialogueBox.SetActive(false);
         //Debug.Log("End of conversation.");

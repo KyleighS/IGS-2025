@@ -42,11 +42,6 @@ public class ObjectPickup : MonoBehaviour, IInteractable
                 hitInfo.collider.gameObject.SetActive(false);
                 //Destroy(hitInfo.collider.gameObject);
 
-                if (evidenceSlider.value >= manager.allEvidence)
-                {
-                    winOverlay.SetActive(true);
-                }
-
             }
         }
     }

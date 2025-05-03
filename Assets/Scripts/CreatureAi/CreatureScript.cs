@@ -217,7 +217,7 @@ public class CreatureScript : MonoBehaviour
     }
     public void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         if (sceneName == "Night4")
         {
             if (other.gameObject.tag == "Player")

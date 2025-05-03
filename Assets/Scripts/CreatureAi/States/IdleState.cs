@@ -26,6 +26,7 @@ public class IdleState : StateClass
     public override void OnEnterState()
     {
         waitingTimeLeft = waitingTime;
+        creatureScript.navMeshAgent.speed = 5;
         //Debug.Log("Waiting");
     }
 

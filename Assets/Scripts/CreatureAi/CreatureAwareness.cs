@@ -31,7 +31,7 @@ public class CreatureAwareness : MonoBehaviour, IAwareness
 
     public void AddToAwarenessList(Collider collider)
     {
-        Debug.Log(collider.name + " entered the list");
+        //Debug.Log(collider.name + " entered the list");
         collidersInAwareness.Add(collider);
         //After the item has been added to the list, we tell all subscribers of this event that it has entered awareness of this object
         //We add the ? to indicate that we will only invoke this event if it's not null
@@ -40,7 +40,7 @@ public class CreatureAwareness : MonoBehaviour, IAwareness
 
     public void RemoveFromAwarenessList(Collider collider)
     {
-        Debug.Log(collider.name + " left the list");
+        //Debug.Log(collider.name + " left the list");
         collidersInAwareness.Remove(collider);
         //After the item has been removed from the list, we tell all subscribers of this event that it has exited awareness of this object
         //We add the ? to indicate that we will only invoke this event
