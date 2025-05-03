@@ -52452,7 +52452,7 @@ GameObject:
   - component: {fileID: 1730212399}
   m_Layer: 0
   m_Name: ExitBound
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
